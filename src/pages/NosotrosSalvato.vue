@@ -1,5 +1,4 @@
 <template>
-<v-app>
   <div class='about'>
     <h1 class="h1-nos">Nosotros</h1>
 
@@ -37,7 +36,7 @@
 
 
   </div>
-  </v-app>
+
 </template>
 
 

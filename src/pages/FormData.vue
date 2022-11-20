@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h3>A&ntilde;adir invitados</h3>
+    <h3>Registrarse</h3>
 
     <div class="card" style="width: 35rem">
       <div class="card-body">
-        <h5 class="card-title">Datos Invitado</h5>
+        <h5 class="card-title">Datos Cliente</h5>
 
         <div class="form-group">
           <label for="formGroupExampleInput">Nombre</label>
@@ -12,7 +12,7 @@
             v-model="nombre"
             type="text"
             class="form-control"
-            placeholder="Armando Agudelo"
+            placeholder="Nombre"
           />
         </div>
         <div class="form-group">
@@ -21,7 +21,7 @@
             v-model="email"
             type="text"
             class="form-control"
-            placeholder="aagudelo@elemail.com"
+            placeholder="E-mail"
           />
         </div>
         <div class="form-group">
@@ -34,7 +34,7 @@
           />
         </div>
         <button class="btn" @click="addPersona">
-          A&ntilde;adir
+          Registrarse
         </button>
       </div>
     </div>
@@ -68,6 +68,7 @@ export default {
         axios.post('https://databasejaa-default-rtdb.firebaseio.com/persona.json',persona)
         .then(res=> console.log(res))
         .catch(error=> console.log(error))
+        alert('Registro exitoso')
       }
     }
 
@@ -100,5 +101,8 @@ export default {
 .btn{
   background-color: #b53131;
   color: black;
+}
+h3{
+  margin-left: 30px;
 }
 </style>

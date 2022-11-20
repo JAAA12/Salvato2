@@ -1,5 +1,5 @@
 <template>
-<v-app>
+
   <div class='inicio'>
     <!-- <header class='encabezado'>
     <img class='imglogo' src="../assets/Logosalvato.png" alt="No carga">
@@ -151,7 +151,7 @@
         
         </footer>
   </div>
-</v-app>
+
 
 </template>
 

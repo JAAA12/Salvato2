@@ -1,5 +1,4 @@
 <template>
-<v-app> <!-- <v-app-bar app> -->
 <div class='cuerpo'> 
 <header class='encabezado'>
     <img class='imglogo' src="../assets/Logosalvato.png" alt="No carga">
@@ -433,7 +432,6 @@
                             <p>{{direccion}}</p>
   </div>
 </div>
-</v-app>
 
 </template>
 

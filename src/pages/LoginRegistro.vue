@@ -11,16 +11,21 @@
 
     <!-- Login Form -->
     <form v-on:submit.prevent="login">
+    
+        <select  class="form-control" id="perfil">
+            <option >Cliente</option>
+            <option >Administrador</option>
+        </select>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="nombre">
       <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
-      <button class="btn" @click="buscarUsuario">
-          A&ntilde;adir
+      <button class="btn ingresar" @click="buscarUsuario">
+          Ingresar
         </button>
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-    <p>¿No tienes cuenta? <router-link to="/" class="nav-link" active-class="active"
+    <p class="registro">¿No tienes cuenta? <router-link to="/" class="nav-link" active-class="active"
             >Registrarse</router-link
           ></p>
       <a class="underlineHover" href="#">Forgot Password?</a>
@@ -59,7 +64,7 @@ export default {
             })
           }
         }
-        if(usuarios.value.lenght >= 1){
+        if(usuarios.value.length >= 1){
           alert("Usuario y contraseña correctos")
         }else{
           alert("Usuario y contaseña incorrecto")
@@ -96,6 +101,33 @@ export default {
 
 
 <style>
+.ingresar{
+  margin: 10px;
+}
+.registro{
+  margin-bottom:5px;
+}
+#perfil{
+   background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  height:58px;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
 .wrapper {
   display: flex;
   align-items: center;
@@ -123,7 +155,7 @@ export default {
 #formFooter {
   background-color: #f6f6f6;
   border-top: 1px solid #dce8f1;
-  padding: 25px;
+  padding: 20px;
   text-align: center;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
