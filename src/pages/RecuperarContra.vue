@@ -10,29 +10,20 @@
     </div>
 
     <!-- Login Form -->
-    <form v-on:submit.prevent="login">
+    <form v-on:submit.prevent="buscarUsuario">
     
-        <select  class="form-control" id="perfil">
-            <option >Cliente</option>
-            <option >Administrador</option>
-        </select>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="nombre">
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
-<!--       <input type="validar" id="validar" class="fadeIn third" name="login" placeholder="Validar" v-model="password">
- -->      <button class="btn ingresar" @click="buscarUsuario">
-          Ingresar
+        
+      <input type="text" id="recuperacion" class="fadeIn second" name="recuperacion" placeholder="Recuperación" v-model="recuperacion">
+      <button class="btn ingresar" @click="recuperacion">
+          Enviar
         </button>
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-    <p class="registro">¿No tienes cuenta? <router-link to="/" class="nav-link" active-class="active"
-            >Registrarse</router-link
-          ></p>
-      <router-link to="/recuperacion" class="nav-link" active-class="active"
-            >Recuperar contraseña</router-link>
+      <router-link to="/login" class="nav-link" active-class="active"
+            >Volver</router-link>
     </div>
-
   </div>
 </div>
   
@@ -49,33 +40,16 @@ export default {
     const usuarios = ([])
     const nombre = ref("")
     const password = ref("")
+    const email= ref("")
     
-    function buscarUsuario(){
-      
-        /* store.dispatch("addPersona", persona);
-        router.push('/print') */
-        axios.get('https://databasejaa-default-rtdb.firebaseio.com/usuarios.json')
-        .then(res=>{
-          console.log(res);
-        for(const id in res.data){
-          if(res.data[id].nombre === nombre.value && res.data[id].password === password.value){
-            usuarios.value.push({
-              id: id,
-              nombre: res.data[id].nombre,
-              password: res.data[id].password,
-            })
-          }
-        }
-        if(usuarios.value.length >= 1){
-          alert("Usuario y contraseña correctos")
-        }else{
-          alert("Usuario y contaseña incorrecto")
-        }
-        usuarios.value= [];
-        }) 
-        .catch(error => console.log(error))
+    function recuperacion(){
+        var exp = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            if(exp.test(this.value.email)){
+                return false;
+            }else{
+                return true;
+            }
     }
-    return{nombre,password,usuarios,buscarUsuario};
   }
   // data() {
   //   return {

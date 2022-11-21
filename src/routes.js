@@ -5,6 +5,7 @@ import contactanos from './pages/ContactanosSalvato'
 import inicio from './pages/InicioSalvato'
 import nosotros from './pages/NosotrosSalvato'
 import productos from './pages/ProductosSalvato'
+import recuperacion from './pages/RecuperarContra'
 
 export const routes = [
     {path:'/', component:FormData},
@@ -14,4 +15,5 @@ export const routes = [
     {path:'/inicio', component:inicio},
     {path:'/productos', component:productos},
     {path:'/nosotros', component:nosotros},
+    {path:'/recuperacion', component:recuperacion},
 ]

@@ -36,6 +36,8 @@
         <button class="btn" @click="addPersona">
           Registrarse
         </button>
+        <router-link to="/login" class="btn" active-class="active"
+            >Volver</router-link>
       </div>
     </div>
   </div>
@@ -101,6 +103,7 @@ export default {
 .btn{
   background-color: #b53131;
   color: black;
+  margin-right: 20px;
 }
 h3{
   margin-left: 30px;
