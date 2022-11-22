@@ -44,9 +44,17 @@
 /* eslint-disable */
 import {ref} from 'vue' //ref crea un objeto
 import axios from 'axios'
+import {useRouter} from 'vue-router'
+
 export default {
+  name: 'LoginRegistro',
+    props:{
+    mainStyle: String,
+    inputStyle: String,
+    },
   setup(){
-    const usuarios = ([])
+    const router=useRouter()
+    const usuarios = []
     const nombre = ref("")
     const password = ref("")
     
@@ -54,26 +62,34 @@ export default {
       
         /* store.dispatch("addPersona", persona);
         router.push('/print') */
-        axios.get('https://databasejaa-default-rtdb.firebaseio.com/usuarios.json')
+        axios.get('https://databasejaa-default-rtdb.firebaseio.com/persona.json')
         .then(res=>{
           console.log(res);
+          console.log(nombre.value,"Nombre")
+          console.log(password.value,"clave")
         for(const id in res.data){
+
           if(res.data[id].nombre === nombre.value && res.data[id].password === password.value){
-            usuarios.value.push({
+            console.log("Hola",usuarios);
+            usuarios.push({
               id: id,
               nombre: res.data[id].nombre,
               password: res.data[id].password,
             })
           }
         }
-        if(usuarios.value.length >= 1){
+        console.log("PruebaUsuarios",usuarios);
+        if(usuarios.length >= 1){
           alert("Usuario y contraseña correctos")
+          router.push("/inicio")
         }else{
           alert("Usuario y contaseña incorrecto")
         }
-        usuarios.value= [];
+        usuarios.splice(0,1);
+        console.log("PruebaUsuarios",usuarios);
         }) 
         .catch(error => console.log(error))
+        
     }
     return{nombre,password,usuarios,buscarUsuario};
   }
