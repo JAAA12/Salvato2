@@ -63,7 +63,7 @@
 
  <div id="lista-pro" class="container">
         <h1 id="titulo2" class="titulo2">"Se requiere una alimentación saludable para tener una salud envidiable"</h1>
-        <H2>Productos</H2>
+        <h2>Productos</h2>
         <div class="row1">
                     <div class="four columns">
                             <div class="carta" id="salvatos">

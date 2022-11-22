@@ -45,7 +45,7 @@
    </div>
  <div id="lista-cursos" class="container">
         <h1 id="titulo1" class="titulo1">Nuestros Productos</h1>
-        <H2>SALVATOS</H2>
+        <h2>SALVATOS</h2>
          
         <div class="row">
                     <div class="four columns">
@@ -126,7 +126,7 @@
                             </div> <!--.card-->
                         </div>
                     </div>
-        <H2>PANES</H2> <!--.row-->
+        <h2>PANES</h2> <!--.row-->
         <div class="row">
             
             <div class="four columns">

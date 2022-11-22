@@ -13,8 +13,8 @@
     <form v-on:submit.prevent="buscarUsuario">
     
         
-      <input type="text" id="recuperacion" class="fadeIn second" name="recuperacion" placeholder="Recuperación" v-model="recuperacion">
-      <button class="btn ingresar" @click="recuperacion">
+      <input type="text" id="recuperacion" class="form-control" name="email" placeholder="Recuperación" v-model="email">
+      <button class="btn ingresar" @click="recuperacionContra">
           Enviar
         </button>
     </form>
@@ -33,24 +33,44 @@
 
 <script>
 /* eslint-disable */
-import {ref} from 'vue' //ref crea un objeto
+/* import {ref} from 'vue' //ref crea un objeto
 import axios from 'axios'
 export default {
   setup(){
-    const usuarios = ([])
-    const nombre = ref("")
-    const password = ref("")
+    const correo = ([])
     const email= ref("")
     
-    function recuperacion(){
-        var exp = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    function recuperacionContra(){
+      axios.get('https://databasejaa-default-rtdb.firebaseio.com/persona.json')
+        .then(res=>{
+          console.log(res);
+        for(const id in res.data){
+          if(res.data[id].email === email.value){
+            correo.push({
+              id: id,
+              email: res.data[id].email,
+            })
+          }
+        }
+        if(correo.length >= 1){
+          alert("Usuario y contraseña correctos")
+        }else{
+          alert("Email incorrecto")
+        }
+        correo.splice(0,1);
+        }) 
+        .catch(error => console.log(error))
+    }
+    return{email,recuperacionContra};
+  } */
+       /*  var exp = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
             if(exp.test(this.value.email)){
                 return false;
             }else{
                 return true;
             }
     }
-  }
+  } */
   // data() {
   //   return {
   //     nombre: "",
