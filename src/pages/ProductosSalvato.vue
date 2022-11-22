@@ -9,22 +9,19 @@
                             <img src="../assets/carro.png" id="img-carrito">
                             <div id="carro">
                                     
-                                    <table id="lista-carrito u-full-width" class="carrito">
-                                        <thead>
-                                            <tr>
-                                                <th>Imagen</th>
-                                                <th>Nombre</th>
-                                                <th>Precio</th>
-                                                <th>Cantidad</th>
-                                                <th>Total</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="botonEliminar"></tbody>
-                                        <thead>
-
-                                        </thead>
-                                    </table>
+                                <table id="lista-carrito" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th>Cantidad</th>
+                                            <th>total</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
 
                                     <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
                             </div>
@@ -438,6 +435,8 @@
 
 
 <script>
+
+/* eslint-disable */
 export default {
   data(){
     return{
@@ -452,9 +451,128 @@ export default {
     valorstore(){
         return this.$store.state
     }
-  }
-
+  },
+mounted(){
+const carrito = document.querySelector('#carro');
+const contenedorCarrito = document.querySelector('#lista-carrito tbody');
+const totalCarrito = document.querySelectorAll('#lista-carrito thead');
+const vaciarCarritoBoton = document.querySelector('#vaciar-carrito');
+const liProductos = document.querySelector('#lista-cursos');
+console.log(totalCarrito);
+let articuloCarrito = [];
+let totalPedido = 0;
+//agregar productos al carro
+cargarEvento();
+function cargarEvento(){
+    console.log("Hola mundo")
+    liProductos.addEventListener('click',agregarProductos);
+    carrito.addEventListener('click',eliminarProducto);
+    vaciarCarritoBoton.addEventListener('click',vaciarProducto);
 }
+function agregarProductos(e){
+    e.preventDefault();
+    if(e.target.classList.contains('agregar-carrito')){
+        const productoSeleccionado = e.target.parentElement.parentElement
+        leerDatos(productoSeleccionado);
+    }
+}
+
+//vaciar carro
+function vaciarProducto(){
+    articuloCarrito=[];
+    limpiarHTML();
+}
+//eliminar producto individual del carrito
+function eliminarProducto(e){
+    console.log(e.target.classList);
+    if(e.target.classList.contains('borrar-curso')){
+        const productoid = e.target.getAttribute('data-id');
+        articuloCarrito = articuloCarrito.filter(producto =>producto.id !== productoid);
+        llenarCarritoHTML();
+
+    }
+    
+}
+// objeto
+function leerDatos(productos){
+    const infoProductos = {
+        imagen: productos.querySelector('img').src,
+        titulo: productos.querySelector('h4').textContent,
+        precio: productos.querySelector('.precio span').textContent,
+        cantidad: 1,
+        total: parseInt(productos.querySelector('.precio span').textContent.substr(1,productos.querySelector('.precio span').textContent.length)),
+        id: productos.querySelector('a').getAttribute('data-id'),
+    };
+
+    //no repetir productos en el carrito
+    console.log(infoProductos);
+    const existe = articuloCarrito.some(producto =>producto.id === infoProductos.id);
+    console.log("existe",existe);
+    //validar si existe y aumentar cantidad y precio total
+    if(existe){
+        const cantidadTotal = articuloCarrito.map(producto =>{
+            if(producto.id === infoProductos.id){
+                console.log("precio",producto.precio.length);
+                producto.cantidad++;
+                producto.total = producto.cantidad * parseInt(producto.precio.substr(1,producto.precio.length));
+                return producto;
+            }else{
+                return producto;
+            }
+        })
+    }else{
+        articuloCarrito = [...articuloCarrito,infoProductos];
+    }
+
+    //agregamos al vector
+   
+    console.log("vector",articuloCarrito);
+    llenarCarritoHTML();
+}
+
+
+//tabla
+function llenarCarritoHTML(){
+    //borrar el HTML del contenedor
+    limpiarHTML();
+    limpiarHtmlTotal();
+    totalPedido = 0;
+ articuloCarrito.forEach(producto =>{
+    const fila = document.createElement('tr');
+    fila.innerHTML = `
+    <td> <img src=${producto.imagen} width = "150%"> </td>
+    <td> ${producto.titulo} </td>
+    <td> ${producto.precio} </td>
+    <td> ${producto.cantidad} </td>
+    <td> ${producto.total} </td>
+    <td> <a href= "#" class="borrar-curso" data-id="${producto.id}"> X </a> </td>
+    `;
+
+    totalPedido = totalPedido + producto.total;
+
+    const filaTotal = document.createElement('tr');
+    filaTotal.innerHTML = `
+    <td> Total Pedido  ${totalPedido} </td>
+    `;
+    contenedorCarrito.appendChild(fila);
+    limpiarHtmlTotal();
+    totalCarrito[1].appendChild(filaTotal);
+
+ })
+};
+
+
+function limpiarHTML(){
+    contenedorCarrito.innerHTML = '';
+};
+function limpiarHtmlTotal(){
+    totalCarrito[1].innerHTML = '';
+};
+return{carrito, contenedorCarrito,totalCarrito ,vaciarCarritoBoton,liProductos,cargarEvento, agregarProductos,vaciarProducto,eliminarProducto,leerDatos,llenarCarritoHTML,limpiarHTML,limpiarHtmlTotal}
+  }
+  
+}
+  
 </script>
 
 
