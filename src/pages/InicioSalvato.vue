@@ -341,7 +341,7 @@ ul{
     background: linear-gradient(to right, #f18d22 0%,#f18d22 100%,#ecab0f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b57c00', endColorstr='#e44e52',GradientType=1 ); /* IE6-9 */
     display: flex;
-    width:1343px;
+    width:1920px;
 }
 
 .iconopan{
@@ -349,8 +349,9 @@ ul{
     background-repeat: no-repeat;
     background-size: 35px 35px;
     background-position: center;
-    padding: 10px 70px 10px 250px;
+    padding: 10px 40px 10px 250px;
     text-align: center;
+    margin-left: 250px;
 }
 
 .iconotorta{

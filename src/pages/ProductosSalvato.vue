@@ -24,6 +24,7 @@
                                 </table>
 
                                     <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                                    <a href="#" id="generar-recibo" class="button u-full-width">Generar Pedido</a>
                             </div>
                     </li>
                 </ul>
@@ -455,7 +456,7 @@ export default {
 mounted(){
 const carrito = document.querySelector('#carro');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
-const totalCarrito = document.querySelectorAll('#lista-carrito thead');
+const totalCarrito = document.querySelector('#lista-carrito thead');
 const vaciarCarritoBoton = document.querySelector('#vaciar-carrito');
 const liProductos = document.querySelector('#lista-cursos');
 console.log(totalCarrito);
@@ -556,7 +557,7 @@ function llenarCarritoHTML(){
     `;
     contenedorCarrito.appendChild(fila);
     limpiarHtmlTotal();
-    totalCarrito[1].appendChild(filaTotal);
+    totalCarrito.appendChild(filaTotal);
 
  })
 };
@@ -566,9 +567,9 @@ function limpiarHTML(){
     contenedorCarrito.innerHTML = '';
 };
 function limpiarHtmlTotal(){
-    totalCarrito[1].innerHTML = '';
+    totalCarrito.innerHTML = '';
 };
-return{carrito, contenedorCarrito,totalCarrito ,vaciarCarritoBoton,liProductos,cargarEvento, agregarProductos,vaciarProducto,eliminarProducto,leerDatos,llenarCarritoHTML,limpiarHTML,limpiarHtmlTotal}
+
   }
   
 }
@@ -643,6 +644,10 @@ margin-left: 80px;
     min-width: 300px;
 }
 
+#generar-recibo{
+    margin: 5px;
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -694,6 +699,7 @@ h2{
  
   font-weight: bold;
 }
+
 .button{
     /*margin: 10px 0 10px 20px;
     padding: 0 30px 0 30px;*/
@@ -762,7 +768,7 @@ h2{
 
 @media (min-width: 1343px){
     .encabezado{
-    width: 1343px;
+    width: 1920px;
 }
 .carrusel{
     width: 1343px;
@@ -776,10 +782,11 @@ h2{
    margin: 20px 118px 20px 170px;
 }
 h2{
-   width: 1000px;
+   width: 1600px;
    height: 43.75px;
    margin: 0 175px;
    font-size: 2.5rem;
+   text-align: center;
 }
 
 /*Columnas*/
@@ -795,6 +802,7 @@ h2{
 .u-pull-left {
   float: left; }
 }
+
 </style>
 <!-- git init
 git add .
