@@ -24,7 +24,11 @@
                                 </table>
 
                                     <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
-                                    <a href="#" id="generar-recibo" class="button u-full-width">Generar Pedido</a>
+                                    <li class="nav-item">
+                                        <router-link to="/pantallaRecibo" class="nav-link" active-class="active"
+                                          >Generar Recibo</router-link
+                                        >
+                                      </li>
                             </div>
                     </li>
                 </ul>

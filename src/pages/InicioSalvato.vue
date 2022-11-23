@@ -434,7 +434,7 @@ ul{
 }
 /*Distribución*/
 .dis{
-    margin-left: 200px;
+    margin-left: 790px;
     height:300px;
     width:400px;
 }
