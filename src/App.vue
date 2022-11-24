@@ -1,20 +1,19 @@
 <template>
   <app-header class="mb-3" />
   <div class="container"><router-view /></div>
-  <!-- <app-headerCliente class="mb-3" />
-  <div class="container2"><router-view /></div> -->
+  <app-footer/>
 </template>
 
 
 <script>
 import Header from "./components/Header";
-/* import HeaderCliente from "./components/HeaderCliente"; */
+import Footer from "./components/Footer";
 
 export default {
   name: "App",
   components: {
     "app-header": Header,
-    /* "app-headerCliente": HeaderCliente, */
+    "app-footer": Footer,
   },
 };
 </script>

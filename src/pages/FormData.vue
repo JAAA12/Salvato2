@@ -9,7 +9,7 @@
         <div class="form-group">
           <label for="formGroupExampleInput">Nombre</label>
           <input
-            v-model="nombre"
+            v-model="nombre "
             type="text"
             class="form-control"
             placeholder="Nombre"
@@ -18,7 +18,7 @@
         <div class="form-group">
           <label for="formGroupExampleInput2">E-mail</label>
           <input
-            v-model="email"
+            v-model="email "
             type="text"
             class="form-control"
             placeholder="E-mail"
@@ -54,48 +54,67 @@ export default {
   setup(){
     const store = useStore()
     const router = useRouter()
+    let encontro=0
+    const unica= []
     const nombre = ref("")
-    const email = ref("")
+    const email  = ref("")
     const password = ref("")
     
     function addPersona(){
       if(nombre.value != '' && email.value != ""){
         const persona = {
-          nombre:nombre.value,
-          email:email.value,
-          password:password.value
+          nombre :nombre .value,
+          email :email .value,
+          password :password .value
         }
+        axios.get('https://databasejaa-default-rtdb.firebaseio.com/persona.json')
+      .then(res=>{
+        console.log(res);
+        console.log(nombre .value,"Nombre")
+        console.log(password .value,"clave")
+      for(const id in res.data){
+        console.log(res.data[id].nombre)
+        console.log(nombre.value)
+        if(res.data[id].nombre  === nombre.value){
+          console.log("Hola",unica);
+        encontro=1;
+        }
+        
+      }
+      console.log(encontro,"Encontro")
+      console.log(unica.length,"Unica")
+      if(encontro == 1){
+          alert("esta registrado")
+          encontro=0
+        }else{
+          unica.push({
+              nombre: nombre.value,
+              password: password.value,
+            })
+          axios.post('https://databasejaa-default-rtdb.firebaseio.com/persona.json',persona)
+     .then(res=> console.log(res))
+     .catch(error=> console.log(error))
+     alert('Registro exitoso')
+     
+
+          
+        }
+        unica.splice(0,1);
+        console.log("PruebaUsuarios",unica);
+        
+      }) 
+      
+      .catch(error => console.log(error))
         /* store.dispatch("addPersona", persona);
         router.push('/print') */
-        axios.post('https://databasejaa-default-rtdb.firebaseio.com/persona.json',persona)
-        .then(res=> console.log(res))
-        .catch(error=> console.log(error))
-        alert('Registro exitoso')
+        console.log("leer")
       }
+      
+  }
+          
+  return{nombre,password,unica,email,addPersona};
     }
 
-    return{nombre, email, password, addPersona}
-  }
-  // data() {
-  //   return {
-  //     nombre: "",
-  //     email: "",
-  //     aporte: "",
-  //   };
-  // },
-  // methods: {
-  //   addPersona() {
-  //     if (this.nombre != "" && this.email != "") {
-  //       const persona = {
-  //         nombre: this.nombre,
-  //         email: this.email,
-  //         aporte: this.aporte,
-  //       };
-  //       this.$store.dispatch("addPersona", persona);
-  //       this.$router.push('/print')
-  //     }
-  //   },
-  // },
 };
 </script>
 
