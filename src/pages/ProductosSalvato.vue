@@ -33,19 +33,16 @@
                     </li>
                 </ul>
             </div>
-        
-    </header>
-<div class='carrusel'>
-    <div class="carrusel-img">
+</header>
 
+    <div class='carrusel'>
+        <div class="carrusel-img">
             <ul class="img-carrusel">
                 <li><img src="../assets/background2.jpg" alt="No cargó"></li>
                 <li><img src="../assets/diapo3.png" alt="No cargó"></li>
                 <li><img src="../assets/diapo2.png" alt="No cargó"></li>
                 <li><img src="../assets/diapo1.png" alt="No cargó"></li>
-            </ul>
-
-           
+            </ul> 
         </div>
    </div>
  <div id="lista-cursos" class="container">
@@ -368,7 +365,6 @@
                 </div> <!--.card-->
             </div> <!--.row-->
         </div>
-        
     
                     <div class="row">
                         <div class="four columns">
@@ -411,8 +407,8 @@
 
             <!-- <div class="slider"> -->
 
-                <div class="row">
-                   <div class="four columns">
+            <div class="row">
+                <div class="four columns">
                     <div class="card">
                         <img src="../assets/torta_chocofusion.jpg" class="imagen-curso u-full-width">
                         <div class="info-card">
@@ -424,14 +420,14 @@
                         </div>
                     </div> <!--.card-->
                 </div>
-             </div>
+            </div>
   </div>
   <div class="store">
-                            <h1>{{nombreempresa}}</h1>
-                            <p>{{correo}}</p>
-                            <p>{{representante}}</p>
-                            <p>{{telefono}}</p>
-                            <p>{{direccion}}</p>
+        <h1>{{nombreempresa}}</h1>
+        <p>{{correo}}</p>
+        <p>{{representante}}</p>
+        <p>{{telefono}}</p>
+        <p>{{direccion}}</p>
   </div>
 </div>
 

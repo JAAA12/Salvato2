@@ -1,6 +1,6 @@
 <template>
 
-  <div class='inicio'>
+<div class='inicio'>
     <!-- <header class='encabezado'>
     <img class='imglogo' src="../assets/Logosalvato.png" alt="No carga">
     <v-spacer></v-spacer>
@@ -47,44 +47,43 @@
         </div>
    </div>
 
-  <div class="barra">
-                    <div class="iconopan">
-                        <p>Panes <br>
-                        Deliciosos y frescos</p>
-                    </div>
-                    <div class="iconotorta">
-                        <p>Tortas <br>Suaves y saludables</p>
-                    </div>
-                    <div class="iconopostre">
-                        <p>Postres <br>
-                        Únicos y llenos de sabor </p>
-                    </div>
-    </div>
+        <div class="barra">
+            <div class="iconopan">
+                <p>Panes <br>
+                Deliciosos y frescos</p>
+            </div>
+            <div class="iconotorta">
+                <p>Tortas <br>Suaves y saludables</p>
+            </div>
+            <div class="iconopostre">
+                <p>Postres <br>
+                Únicos y llenos de sabor </p>
+            </div>
+        </div>
 
- <div id="lista-pro" class="container">
+    <div id="lista-pro" class="container">
         <h1 id="titulo2" class="titulo2">"Se requiere una alimentación saludable para tener una salud envidiable"</h1>
         <h2>Productos</h2>
         <div class="row1">
                     <div class="four columns">
-                            <div class="carta" id="salvatos">
+                        <div class="carta" id="salvatos">
                                 <img src="../assets/pan_italianisimo.jpg" class="imagen-curso u-full-width">
-                                <div class="info-carta">
+                            <div class="info-carta">
                                     <h4>Panes</h4>
                                     <p>Variedad de panes a base de harina de avena, harina integral, harina de chia y linaza.
                                     </p>        
-                                </div>
                             </div>
+                        </div>
                     </div>
             
                     <div class="four columns">
-                            <div class="carta">
+                        <div class="carta">
                                 <img src="../assets/salvato_chocomani.jpg" class="imagen-curso u-full-width">
-                                <div class="info-carta">
-                                    <h4>Salvatos</h4>
-                                    <p>Panes a base de harina de avena y arroz, de diferente y deliciosos sabores.</p>
-                                
-                                </div>
-                            </div> <!--.card-->
+                            <div class="info-carta">
+                                <h4>Salvatos</h4>
+                                <p>Panes a base de harina de avena y arroz, de diferente y deliciosos sabores.</p>
+                            </div>
+                        </div> <!--.card-->
                     </div>
                
                     <div class="four columns">
@@ -97,29 +96,27 @@
                         </div> <!--.card-->
                     </div>
                     
-        </div>
-        </div>
-         <div class="row1">
+        </div><!--cierre-->
+                <div class="row1">
                     <div class="four columns">
-                            <div class="carta" id="salvatos">
+                        <div class="carta" id="salvatos">
                                 <img src="../assets/Cupcakes.jpeg" class="imagen-curso u-full-width">
-                                <div class="info-carta">
-                                    <h4>Cupcakes</h4>
-                                    <p>Disfruta estos deliciosos muffins saludables de diferentes sabores.
-                                    </p>        
-                                </div>
+                            <div class="info-carta">
+                                <h4>Cupcakes</h4>
+                                <p>Disfruta estos deliciosos muffins saludables de diferentes sabores.
+                                </p>        
                             </div>
+                        </div>
                     </div>
             
                     <div class="four columns">
-                            <div class="carta">
+                        <div class="carta">
                                 <img src="../assets/jarcake_brownie.jpg" class="imagen-curso u-full-width">
-                                <div class="info-carta">
-                                    <h4>Jarcakes</h4>
-                                    <p>Torta del sabor que desees en un jar para esos pequeños antojos.</p>
-                                
-                                </div>
-                            </div> <!--.card-->
+                            <div class="info-carta">
+                                <h4>Jarcakes</h4>
+                                <p>Torta del sabor que desees en un jar para esos pequeños antojos.</p>
+                            </div>
+                        </div> <!--.card-->
                     </div>
                
                     <div class="four columns">
@@ -131,26 +128,24 @@
                             </div>
                         </div> <!--.card-->
                     </div>
-                    
-        </div>
-
+                </div><!--cierre-->
+    </div>
         <h2>Puntos de distribución</h2>
         <div class="div">
-        <img src="../assets/holistica.png" alt="No cargó" class="dis">
+            <img src="../assets/holistica.png" alt="No cargó" class="dis">
         
         </div>
 
         <div class="vuex">
-        <h1 class="info1">{{nombreempresa}}</h1>
-        <p class="info2" >{{correo}}</p>
-        <p class="info3">{{representante}}</p>
-        <p class="info4">{{telefono}}</p>
-        <p class="info5">{{direccion}}</p>
+            <h1 class="info1">{{nombreempresa}}</h1>
+            <p class="info2" >{{correo}}</p>
+            <p class="info3">{{representante}}</p>
+            <p class="info4">{{telefono}}</p>
+            <p class="info5">{{direccion}}</p>
         </div>
-        <footer>
-        
-        </footer>
-  </div>
+    
+</div>
+
 
 
 </template>

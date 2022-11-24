@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer id="footer" class="footer">
-      <div class="container2">
+      <div class="container">
           <div class="row">
                   <div class="four columns">
                           <nav id="principal" class="menu">
@@ -62,7 +62,7 @@
   grid-gap: 1rem;/*nos permite determinar los espaciados entre los elementos.*/
 }
 .footer .container {
-  padding: 1rem;
+  padding: 2px;
 }
 
 .footer #principal a{
@@ -81,6 +81,11 @@
   padding-top: .5rem;
 }
 
+.four.columns                  
+{ width: 30.6666666667%; }
+.offset-by-four.column,
+  .offset-by-four.columns 
+{ margin-left: 34.6666666667%; }
 
 .footer #principal a:hover 
 { 
@@ -125,7 +130,14 @@ nav
   display: block;
 }
 
-
+.row {
+  display: flex;
+  margin: 20px 20px 0px 100px;
+}
+.menu {
+  padding: 0px 45px 0px 0px;
+  font-size: 20px;
+}
 /* Larger than mobile */
 @media (min-width: 400px) {}
 
