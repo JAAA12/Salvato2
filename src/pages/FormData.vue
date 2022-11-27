@@ -91,14 +91,14 @@ export default {
               nombre: nombre.value,
               password: password.value,
             })
+            this.nombre="";
+            this.email="";
+            this.password="";
           axios.post('https://databasejaa-default-rtdb.firebaseio.com/persona.json',persona)
      .then(res=> console.log(res))
      .catch(error=> console.log(error))
      alert('Registro exitoso')
-     
-
-          
-        }
+     }
         unica.splice(0,1);
         console.log("PruebaUsuarios",unica);
         

@@ -29,7 +29,7 @@
             ><img src="../assets/logoinicio.webp" class="logoinicio"></router-link
           >
         </li>
-        <template>
+        <template v-if="key">
         <li class="nav-item">
           <router-link to="/registroAdmis" class="nav-link" active-class="active"
             >Admi</router-link
@@ -44,7 +44,21 @@
 
 
 <script>
-
+  
+/*   export default {
+    name: 'LoginRegistro',
+  data(){
+        return{
+          key: "",
+        }
+      
+    },
+    methods: {
+      onchange: function() {
+        console.log(this.key)
+      },
+    }
+  }; */
 </script>
 
 

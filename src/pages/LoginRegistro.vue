@@ -13,6 +13,7 @@
       <form v-on:submit.prevent="login">
       
           <select  name="LeaveType" @change="onchange()" class="form-control" id="perfil" v-model="key" >
+              <option value="" disabled>Seleccione Rol</option>
               <option :value="true">Cliente</option>
               <option :value="false">Administrador</option>
           </select>
@@ -27,10 +28,10 @@
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
-      <p class="registro">¿No tienes cuenta? <router-link to="/" class="nav-link" active-class="active"
+      <p class="registro">¿No tienes cuenta? <router-link to="/" id="link" class="nav-link" active-class="active"
               >Registrarse</router-link
             ></p>
-        <router-link to="/recuperacion" class="nav-link" active-class="active"
+        <router-link to="/recuperacion" id="link" class="nav-link" active-class="active"
               >Recuperar contraseña</router-link>
       </div>
   
@@ -141,7 +142,14 @@
   }
   .registro{
     margin-bottom:5px;
+    
   }
+  #link{
+    color: black;
+  }
+  #link:hover{
+    color :rgb(151, 29, 29);
+    }
   #perfil{
      background-color: #f6f6f6;
     border: none;
