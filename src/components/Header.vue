@@ -1,11 +1,9 @@
 <template>
   <nav class="navbar navbar-light nav-pills" style="background-color:  rgb(133, 7, 7)">
     <div class="container">
+        <img src="../assets/Logosalvato.png" class="logosalvato">
+      <div class="enlaces">
       <ul class="nav">
-      <li class="nav-item">
-          <img src="../assets/Logosalvato.png" class="logosalvato">
-          
-        </li>
         <li class="nav-item">
           <router-link to="/inicio" class="nav-link" active-class="active"
             >Inicio</router-link
@@ -40,6 +38,7 @@
            </template>     
       </ul>
     </div>
+    </div>
   </nav>
 </template>
 
@@ -50,17 +49,27 @@
 
 
 <style>
+.container{
+  margin:20px;
+}
+.nav-link{
+  color:white;
+  font-family: 'Times';
+}
 .nav-pills .nav-link.active,
 .show>.nav-pills .nav-link{
     background: #b53131;
-    color: black; 
+    text-decoration:none;
+}
+.nav-link:hover{
+color :rgb(16, 14, 14);
 }
 .logosalvato{
   width: 60px;
-  height:60px
+ height:60px;
 }
 .logoinicio{
   width: 30px;
-  height:30px
+  height:30px;
 }
 </style>

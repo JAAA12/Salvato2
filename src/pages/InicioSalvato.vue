@@ -1,51 +1,14 @@
 <template>
-
-<div class='inicio'>
-    <!-- <header class='encabezado'>
-    <img class='imglogo' src="../assets/Logosalvato.png" alt="No carga">
-    <v-spacer></v-spacer>
-         <div class="carrito">
-                <ul>
-                    <li class="submenu">
-                            <img src="../assets/carro.png" id="img-carrito">
-                            <div id="carro">
-                                    
-                                    <table id="lista-carrito" class="carrito">
-                                        <thead>
-                                            <tr>
-                                                <th>Imagen</th>
-                                                <th>Nombre</th>
-                                                <th>Precio</th>
-                                                <th>Cantidad</th>
-                                                <th>Total</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="botonEliminar"></tbody>
-                                        <thead>
-
-                                        </thead>
-                                    </table>
-
-                                    <a href="#" id="vaciar-carrito" class="button">Vaciar Carrito</a>
-                            </div>
-                    </li>
+   <div class='carrusel'>
+        <div class="carrusel-img">
+                <ul class="img-carrusel">
+                    <li><img src="../assets/background2.jpg" alt="No cargó"></li>
+                    <li><img src="../assets/background3.png" alt="No cargó"></li>
+                    <li><img src="../assets/background4.png" alt="No cargó"></li>
+                    <li><img src="../assets/background5.png" alt="No cargó"></li>
                 </ul>
             </div>
-        
-    </header> -->
-
-   <div class='carrusel'>
-    <div class="carrusel-img">
-
-            <ul class="img-carrusel">
-                <li><img src="../assets/background2.jpg" alt="No cargó"></li>
-                <li><img src="../assets/background3.png" alt="No cargó"></li>
-                <li><img src="../assets/background4.png" alt="No cargó"></li>
-                <li><img src="../assets/background5.png" alt="No cargó"></li>
-            </ul>
         </div>
-   </div>
 
         <div class="barra">
             <div class="iconopan">
@@ -129,7 +92,7 @@
                         </div> <!--.card-->
                     </div>
                 </div><!--cierre-->
-    </div>
+    
         <h2>Puntos de distribución</h2>
         <div class="div">
             <img src="../assets/holistica.png" alt="No cargó" class="dis">
@@ -142,8 +105,7 @@
             <p class="info3">{{representante}}</p>
             <p class="info4">{{telefono}}</p>
             <p class="info5">{{direccion}}</p>
-        </div>
-    
+        </div>   
 </div>
 
 
