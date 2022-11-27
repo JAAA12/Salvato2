@@ -31,15 +31,24 @@
             ><img src="../assets/logoinicio.webp" class="logoinicio"></router-link
           >
         </li>
+        <template>
         <li class="nav-item">
           <router-link to="/registroAdmis" class="nav-link" active-class="active"
             >Admi</router-link
           >
-        </li> 
+        </li>
+           </template>     
       </ul>
     </div>
   </nav>
 </template>
+
+
+<script>
+
+</script>
+
+
 <style>
 .nav-pills .nav-link.active,
 .show>.nav-pills .nav-link{
