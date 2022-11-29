@@ -53,6 +53,7 @@
       props:{
       mainStyle: String,
       inputStyle: String,
+      onChange: Boolean
       },
       
     setup(){

@@ -29,7 +29,7 @@
             ><img src="../assets/logoinicio.webp" class="logoinicio"></router-link
           >
         </li>
-        <template v-if="key">
+        <template v-bind:onChange="false">
         <li class="nav-item">
           <router-link to="/registroAdmis" class="nav-link" active-class="active"
             >Admi</router-link
