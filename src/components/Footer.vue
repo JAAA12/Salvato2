@@ -5,22 +5,15 @@
           <div class="row">
                   <div class="four columns">
                           <nav id="principal" class="menu">
-                              <a class="enlace" href="#">Para tu Negocio</a>
-                              <a class="enlace" href="#">Conviertete en Instructor</a>
-                              <a class="enlace" href="#">Aplicaciones Móviles</a>
-                              <a class="enlace" href="#">Soporte</a>
+                              <a class="enlace" href="#"><b>Nombre Empresa: </b><br> Pastelería Salvato<br></a>
+                              <a class="enlace" href="#"><b>Dirección: </b><br> Cra 35 #35-33 <br>Florida<br></a>
+                              
+                              <a class="enlace" href="#"><b>Correo: </b><br> salvato@gmail.com<br></a>
                           </nav>
                   </div>
-                  <div class="four columns">
-                          <nav id="secundaria" class="menu">
-                              <a class="enlace" href="#">Temas</a>
-                              <a class="enlace" href="#">¿Quienes Somos?</a>
-                              <a class="enlace" href="#">Empleo</a>
-                              <a class="enlace" href="#">Blog</a>
-                          </nav>
-                  </div>
+                  
                   <nav class="sociales">
-                      <ul>
+                
                           <li>
                               <a href="http://facebook.com" target="_blank">
                                   <img src="../assets/imgface.png" width="50" height="50">
@@ -36,8 +29,16 @@
                                   <img src="../assets/imgwhatsapp.png" width="50" height="50">
                               </a>
                           </li>
-                      </ul>
+                     
                   </nav>
+                  <div class="four columns">
+                    <nav id="secundaria" class="menu">
+                        <a class="enlace" href="#"><b>Abierto:</b>
+                          <br> Lunes a Sábado <br> 8am-6pm</a>
+                        <a class="enlace" href="#"><b>Lugares:</b> <br> Pedidos en area <br> 
+                           Metropolitana de Bucaramanga<br></a>
+                    </nav>
+            </div>
           </div>
       </div>
   </footer>
@@ -71,6 +72,8 @@
   text-decoration: none;
   display: block;
   padding-top: .5rem;
+  text-align: center;
+  margin-right:150px;
 }
 
 .footer #secundaria a{
@@ -79,13 +82,9 @@
   text-decoration: none;
   display: block;
   padding-top: .5rem;
+  text-align: center;
+  margin-left:150px;
 }
-
-.four.columns                  
-{ width: 30.6666666667%; }
-.offset-by-four.column,
-  .offset-by-four.columns 
-{ margin-left: 34.6666666667%; }
 
 .footer #principal a:hover 
 { 
@@ -97,8 +96,9 @@
   color: #000000; 
 }
 
-.sociales ul {
+.sociales li {
   display: flex;
+  margin:20px;
   flex-wrap: wrap;
   justify-content: flex-start;
   justify-content: flex-end;
@@ -114,6 +114,7 @@
 .sociales ul li:last-of-type {
   margin-right: 0;
 }
+
 .sociales ul li a {
   text-decoration: none;
   padding: 2px 5px;
