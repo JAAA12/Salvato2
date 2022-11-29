@@ -99,159 +99,19 @@
         
         </div>
 
-        <div class="vuex">
-            <h1 class="info1">{{nombreempresa}}</h1>
-            <p class="info2" >{{correo}}</p>
-            <p class="info3">{{representante}}</p>
-            <p class="info4">{{telefono}}</p>
-            <p class="info5">{{direccion}}</p>
-        </div>   
 </div>
 
 
 
 </template>
 
-<!-- cargarEvento()
-function cargarEvento(){
-    liproductos.addEventListener('click', agregarProducto)
-    carrito.addEventListener('click', eliminarproducto)
-    boton.addEventListener('click', ()=>{
-        articulocarrito=[]
-        limpiarhtml()
-        limpiarhtmltotal()
-    })
-    
-}
-
-
-function agregarProducto(e){
-    e.preventDefault()
-    if(e.target.classList.contains('agregar-carrito')){
-        /* e.target.parentElement */
-        
-        const productoseleccionado = e.target.parentElement.parentElement
-        leerdatos(productoseleccionado)
-
-        }
-    }
-function eliminarproducto(e){
-    if(e.target.classList.contains('borrar-curso')){
-        const productoId = e.target.getAttribute('data-id');
-
-        articulocarrito = articulocarrito.filter(producto =>producto.id !== productoId );
-        
-        llenarcarritohtml();
-    }
-}
-
-
-function leerdatos(productos){
-    const infoproductos ={
-        imagen: productos.querySelector('img').src,
-        titulo: productos.querySelector('h4').textContent,
-        precio: productos.querySelector('.precio span').textContent,
-        cantidad: 1,
-        total: parseInt(productos.querySelector('.precio span').textContent.substr(1,productos.querySelector('.precio span').textContent.length)),
-        id: productos.querySelector('a').getAttribute('data-id')    
-    }
-    
-    const existe = articulocarrito.some(producto => producto.id === infoproductos.id)
-
-
-    if(existe){
-        const cantidadtotal = articulocarrito.map( producto => {
-            if(producto.id === infoproductos.id){
-                /* console.log('precio', (producto.precio.length)) */
-                producto.cantidad++
-                producto.total = producto.cantidad * parseInt(producto.precio.substr(1,producto.precio.length))
-                return producto
-            }else  {
-                
-                return producto
-                
-            }
-        })
-        articulocarrito = [...cantidadtotal]
-
-        
-    }else {
-        articulocarrito = [...articulocarrito,infoproductos]
-    }
-
-    console.log(infoproductos)
-    /* Agrgamos el vector, el ... ayuda a acumular la información */
-    
-    console.log('vector',articulocarrito)
-
-    llenarcarritohtml()
-
-
-}
-/* tr filas td columna */
-/* con ${} un dato de javascript nos deja insertarlo en el html */
-/* llamarla desde el principio para que borre */
-
-
-function llenarcarritohtml(){
-    limpiarhtml()
-    limpiarhtmltotal()
-    totalpedido = 0
-    articulocarrito.forEach(producto =>{
-        const fila = document.createElement('tr')
-        fila.id = 'hi'
-        fila.innerHTML = `
-        <td><img src='${producto.imagen}' width='90'></td>
-        <td>${producto.titulo}</td>
-        <td>${producto.precio}</td>
-        <td>${producto.cantidad}</td>
-        <td>$${producto.total}</td>
-        <td><a href='#' class='borrar-curso' data-id='${producto.id}'>X</a></td>
-        `
-        totalpedido = totalpedido + producto.total
-        const filatotal = document.createElement('tr')
-        filatotal.id = 'hi'
-        filatotal.innerHTML = `
-        <td>Total: ${totalpedido}</td>
-        `
-        contenedorcarrito.appendChild(fila)
-        limpiarhtmltotal()
-        totalcarrito[1].appendChild(filatotal)
-    })
-   
-}
-
-
-function limpiarhtml(){
-    contenedorcarrito.innerHTML= ''
-}
-
-function limpiarhtmltotal(){
-    totalcarrito[1].innerHTML= ''
-} -->
-
 <script>
-export default {
-  name: 'InicioSalvato',
-  data(){
-    return {
-    nombreempresa:this.$store.state.nombreempresa,
-    correo:this.$store.state.correo,
-    representante:this.$store.state.representante,
-    telefono:this.$store.state.telefono,
-    direccion:this.$store.state.direccion,
-    }
-    }
-}
 
 </script>
 
 <!-- arriba, derecha, abajo, izquierda -->
 <style>
-.vuex {
-    background-color:brown;
-    text-align: center;
-}
+
 .info1, .info2, .info3,.info4,.info5{
     color:white;
     font-family:georgia;

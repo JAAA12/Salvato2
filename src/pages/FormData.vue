@@ -19,7 +19,7 @@
           <label for="formGroupExampleInput2">E-mail</label>
           <input
             v-model="email "
-            type="text"
+            type="email"
             class="form-control"
             placeholder="E-mail"
           />

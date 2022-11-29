@@ -5,7 +5,7 @@
       <!-- Tabs Titles -->
   
       <!-- Icon -->
-      <div class="fadeIn first">
+      <div class="logoImg">
         <img src="@/assets/Logosalvato.png" id="icon" alt="User Icon" />
       </div>
   
@@ -29,10 +29,10 @@
       <!-- Remind Passowrd -->
       <div id="formFooter">
       <p class="registro">¿No tienes cuenta? <router-link to="/" id="link" class="nav-link" active-class="active"
-              >Registrarse</router-link
+              ><b>Registrarse</b></router-link
             ></p>
         <router-link to="/recuperacion" id="link" class="nav-link" active-class="active"
-              >Recuperar contraseña</router-link>
+              ><b>Recuperar contraseña</b></router-link>
       </div>
   
     </div>
@@ -48,12 +48,12 @@
   import axios from 'axios'
   import {useRouter} from 'vue-router'
   
+  
   export default {
     name: 'LoginRegistro',
       props:{
       mainStyle: String,
       inputStyle: String,
-      onChange: Boolean
       },
       
     setup(){
@@ -86,6 +86,7 @@
           if(usuarios.length >= 1){
             alert("Usuario y contraseña correctos")
             router.push("/inicio")
+            
           }else{
             alert("Usuario y contaseña incorrecto")
           }
@@ -102,12 +103,31 @@
   data(){
         return{
           key: "",
+          valornumero:this.$store.state.perfil,
+          mostrarN:this.$store.state.mostrar,
         }
       
     },
+    
     methods: {
       onchange: function() {
-        console.log(this.key)
+        console.log(this.key,"key")
+        console.log(this.mostrarN,"mostrar")
+        console.log(this.valornumero,"mostrarnum")
+        if(this.key==true){
+          console.log(this.key)
+          this.$store.state.perfil=true,
+          this.$store.state.mostrar=false,
+          console.log(this.$store.state.mostrar,"admi")
+          
+        }
+        else{
+          console.log(this.key)
+          this.$store.state.perfil=false,
+          this.$store.state.mostrar=true,
+          console.log(this.$store.state.mostrar,"admifalse")
+          this.$forceUpdate();
+        }
       },
     }
   };
@@ -138,6 +158,9 @@
   
   
   <style>
+  .logoImg{
+    margin:20px;
+  }
   .ingresar{
     margin: 10px;
   }

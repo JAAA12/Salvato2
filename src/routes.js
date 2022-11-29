@@ -1,5 +1,5 @@
-import FormData from './pages/FormData.vue'
 import login from './pages/LoginRegistro.vue'
+import FormData from './pages/FormData.vue'
 import Details from './pages/Details.vue'
 import contactanos from './pages/ContactanosSalvato'
 import inicio from './pages/InicioSalvato'
@@ -8,10 +8,11 @@ import productos from './pages/ProductosSalvato'
 import recuperacion from './pages/RecuperarContra'
 import registroAdmis from './pages/RegistroAdmis'
 import pantallaRecibo from './pages/PantallaRecibo'
+import header from './components/HeaderCliente'
 
 export const routes = [
-    {path:'/', component:FormData},
     {path:'/login', component:login},
+    {path:'/', component:FormData},
     {path:'/details/:index', component:Details},
     {path:'/contactanos', component:contactanos},
     {path:'/inicio', component:inicio},
@@ -19,5 +20,6 @@ export const routes = [
     {path:'/nosotros', component:nosotros},
     {path:'/recuperacion', component:recuperacion},
     {path:'/registroAdmis', component:registroAdmis},
-    {path:'/pantallaRecibo',component:pantallaRecibo}
+    {path:'/pantallaRecibo',component:pantallaRecibo},
+    {path:'/header', component:header},
 ]
