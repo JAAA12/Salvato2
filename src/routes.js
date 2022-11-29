@@ -8,6 +8,7 @@ import productos from './pages/ProductosSalvato'
 import recuperacion from './pages/RecuperarContra'
 import registroAdmis from './pages/RegistroAdmis'
 import pantallaRecibo from './pages/PantallaRecibo'
+import pagos from './pages/PlantillaPagos'
 
 export const routes = [
     {path:'/', component:FormData},
@@ -19,5 +20,7 @@ export const routes = [
     {path:'/nosotros', component:nosotros},
     {path:'/recuperacion', component:recuperacion},
     {path:'/registroAdmis', component:registroAdmis},
-    {path:'/pantallaRecibo',component:pantallaRecibo}
+    {path:'/pantallaRecibo',component:pantallaRecibo},
+    {path:'/pagos',component:pagos}
+
 ]
