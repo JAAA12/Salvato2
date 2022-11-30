@@ -50,9 +50,6 @@
     <button class="btn" @click="generaRecibo">
             Pedir
           </button>
-          <router-link to="/estadisticas" class="nav-link" active-class="active"
-              >estadisticas</router-link
-            >
 
 </div>
 
@@ -90,6 +87,8 @@ setup(){
         axios.post('https://databasejaa-default-rtdb.firebaseio.com/recibo.json',recibo)
         .then(res=> console.log(res))
         .catch(error=> console.log(error))
+      }else{
+        alert('Ingrese todos los datos')
       }
     }
 

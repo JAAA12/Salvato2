@@ -9,6 +9,8 @@ import recuperacion from './pages/RecuperarContra'
 import registroAdmis from './pages/RegistroAdmis'
 import pantallaRecibo from './pages/PantallaRecibo'
 import header from './components/HeaderCliente'
+import pagos from './pages/PlantillaPagos'
+import registroProductos from './pages/RegistroProductos'
 
 export const routes = [
     {path:'/login', component:login},
@@ -22,4 +24,6 @@ export const routes = [
     {path:'/registroAdmis', component:registroAdmis},
     {path:'/pantallaRecibo',component:pantallaRecibo},
     {path:'/header', component:header},
+    {path:'/pagos', component:pagos},
+    {path:'/registroProductos', component:registroProductos},
 ]
