@@ -1,11 +1,15 @@
 <template>
   <div>
-    <div class="card" v-if="persona != undefined">
-      <h5 class="card-header">{{ persona.nombre }}</h5>
+    <div class="card" v-if="recibo != undefined">
+      <h5 class="card-header">{{ recibo.nombrePedido }}</h5>
       <div class="card-body">
         <div class="card-text">
-          <p>Mail : {{persona.email}}</p>
-          <p>Aporte : {{persona.aporte}}</p>
+          <p>Nombre : {{recibo.nombrePedido}}</p>
+          <p>Télefono : {{recibo.telefono}}</p>
+          <p>Hora de entrega : {{recibo.hora}}</p>
+          <p>Fecha de entrega : {{recibo.fecha}}</p>
+          <p>Forma de pagar : {{recibo.pago}}</p>
+          <p>Despacho de producto : {{recibo.entrega}}</p>
         </div>
        
       </div>
@@ -14,7 +18,7 @@
     <div v-else class="alert alert-danger" role="alert">
       No hay datos disponibles
     </div>
-    <router-link to="/print" class="btn btn-primary mt-3">Volver</router-link>
+    <router-link to="/pagos" class="btn btn-primary mt-3">Volver</router-link>
   </div>
 </template>
 
@@ -29,19 +33,18 @@ export default {
   setup(){
     /* const store = useStore() */
     const route = useRoute()
-    const persona = ref("")
+    const recibo = ref("")
 
    /*  const persona = computed(()=>{ */
       const index = route.params.index;
       /* return store.getters.getPersona(index);
     }) */
-    axios.get('https://databasejaa-default-rtdb.firebaseio.com/persona/'+index+'.json')
+    axios.get('https://databasejaa-default-rtdb.firebaseio.com/recibo/'+index+'.json')
     .then(res=>{
       console.log(res)
-      persona.value =res.data
+      recibo.value = res.data
     })
     .catch(error=>console.log(error))
-   return {persona}
   }
   // computed: {
   //   persona() {

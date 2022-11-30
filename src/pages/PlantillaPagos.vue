@@ -1,27 +1,51 @@
 <template>
-<div id="pagos">  
-<table id="pagos-tabla" class="table">
-  <thead>
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Correo</th>
-      <th scope="col">Télefono</th>
-      <th scope="col">Dirección</th>
-      <th scope="col">Fecha de entrega</th>
-      <th scope="col">Valor a pagar</th>
-      <th scope="col">Pagado</th>
-    </tr>
-  </thead>
-  <tbody>  
-      <td><input type="checkbox"></td>
-  </tbody>
-</table>
-</div>
+  <div>
+    <h3>Lista de pagos</h3>
+
+    <ul class="list-group">
+      <li v-for="(recibo, i) in recibo1" :key="i"  class="list-group-item">
+        <router-link :to="`/details/${recibo.id}`" >{{
+          recibo.fecha
+        }}</router-link>
+        <input type="checkbox" name="confirmar" id="confirmar" >
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-
-/* eslint-disable */
+import axios from 'axios'
+import {ref} from 'vue'
 export default {
-}
+  setup(){
+    const recibo1 = ref([])
+    axios.get('https://databasejaa-default-rtdb.firebaseio.com/recibo.json')
+    .then(res=>{
+      console.log(res)
+      for(const id in res.data){
+        recibo1.value.push({
+          id: id,
+          nombrePedido: res.data[id].nombrePedido,
+          telefono: res.data[id].telefono,
+          hora: res.data[id].hora,
+          fecha: res.data[id].fecha,
+          pago: res.data[id].pago,
+          entrega: res.data[id].entrega
+        })
+      }
+    })
+    .catch(error=> console.log(error))
+    return {recibo1};
+  }
+  /* computed: {
+    personas() {
+      return this.$store.getters.getPersonas;
+    },
+  }, */
+};
 </script>
+<style>
+#confirmar{
+  margin-left: 20px;
+}
+</style>

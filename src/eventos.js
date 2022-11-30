@@ -37,4 +37,25 @@ h3 {{(type===0)?'Login':'registro'}} o puede ser {{title}}
 registro @click="type=1"
 input v-if="type!=2"
 input v-if="type===1"
+
+
+
+<div id="pagos">  
+<table id="pagos-tabla" class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Télefono</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Fecha de entrega</th>
+      <th scope="col">Valor a pagar</th>
+      <th scope="col">Pagado</th>
+    </tr>
+  </thead>
+  <tbody>  
+      <td><input type="checkbox"></td>
+  </tbody>
+</table>
+</div>
 */
