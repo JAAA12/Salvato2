@@ -18,8 +18,14 @@
               <option :value="false">Administrador</option>
           </select>
           <h1 v-if="key">Hola</h1>
+      <div class="cliente" v-if="(key)">
         <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="nombre">
         <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
+      </div>
+      <div class="Administrador" v-if="(key==false)" >
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="UsuarioAdmi" v-model="nombreAdmi">
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="PasswordAdmi" v-model="passwordAdmi">
+      </div>
   <!--       <input type="validar" id="validar" class="fadeIn third" name="login" placeholder="Validar" v-model="password">
    -->      <button class="btn ingresar" v-on:click="onchange()" @click="buscarUsuario">
             Ingresar
@@ -61,14 +67,24 @@
       const usuarios = []
       const nombre = ref("")
       const password = ref("")
+      /*admi*/
+     /* const storeAdmi = useStore()
+      const routerAdmi = useRouter()*/
+      const admis=[]
+      const nombreAdmi = ref("")
+      /*const emailAdmi = ref("")*/
+      const passwordAdmi = ref("")
       
       function buscarUsuario(){
         
           /* store.dispatch("addPersona", persona);
           router.push('/print') */
+          console.log(this.key,"esta afuera")
+          if(this.key===true){
+            console.log("keeeey",this.key)
           axios.get('https://databasejaa-default-rtdb.firebaseio.com/persona.json')
           .then(res=>{
-            console.log(res);
+            console.log(res,"resusuario");
             console.log(nombre.value,"Nombre")
             console.log(password.value,"clave")
           for(const id in res.data){
@@ -94,11 +110,42 @@
           console.log("PruebaUsuarios",usuarios);
           }) 
           .catch(error => console.log(error))
-          
+        }
+        /*es Admi*/
+        else{
+          console.log("keyfalse",this.key)
+          axios.get('https://databasejaa-default-rtdb.firebaseio.com/Admi.json')
+          .then(resAdmi=>{
+            console.log(resAdmi,"resadmi");
+            console.log(nombreAdmi.value,"Nombre Admi")
+            console.log(passwordAdmi.value,"clave Admi")
+          for(const idAdmi in resAdmi.data){
+  
+            if(resAdmi.data[idAdmi].nombreAdmi === nombreAdmi.value && resAdmi.data[idAdmi].passwordAdmi === passwordAdmi.value){
+              console.log("HolaAdmi",admis);
+              admis.push({
+                idAdmi: idAdmi,
+                nombreAdmi: resAdmi.data[idAdmi].nombreAdmi,
+                passwordAdmi: resAdmi.data[idAdmi].passwordAdmi,
+              })
+            }
+          }
+          console.log("PruebaAdmi",admis);
+          if(admis.length >= 1){
+            alert("Admi y contraseña correctos")
+            router.push("/inicio")
+            
+          }else{
+            alert("Admi y contaseña incorrecto")
+          }
+          admis.splice(0,1);
+          console.log("PruebaAdmi",admis);
+          }) 
+          .catch(error => console.log(error))
+        }
+        return{nombre,password,usuarios,buscarUsuario,nombreAdmi,passwordAdmi};
       }
       
-  return{nombre,password,usuarios,buscarUsuario};
-    
   },
   data(){
         return{
