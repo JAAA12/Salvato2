@@ -12,8 +12,11 @@
     "bootstrap": "^5.2.2",
     "bootstrap-vue": "^2.23.1",
     "core-js": "^3.6.5",
+    "jspdf": "^2.5.1",
+    "jspdf-html2canvas": "^1.4.9",
     "node": "^16.13.1",
     "vue": "^3.2.45",
+    "vue-html2pdf": "^1.8.0",
     "vue-router": "^4.1.6",
     "vuex": "^4.0.0-rc.1"
   },

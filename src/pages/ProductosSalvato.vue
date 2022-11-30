@@ -25,9 +25,9 @@
 
                                     <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
                                     <li class="nav-item">
-                                        <router-link to="/pantallaRecibo" class="nav-link" active-class="active"
-                                          >Generar Recibo</router-link
-                                        >
+                                        <router-link to="/pantallaRecibo" class="nav-link" active-class="active" id="grecibo">
+                                            Generar Recibo
+                                        </router-link>
                                       </li>
                             </div>
                     </li>
@@ -644,8 +644,12 @@ margin-left: 80px;
     min-width: 300px;
 }
 
-#generar-recibo{
+#grecibo{
     margin: 5px;
+    text-align: center;
+    border: 1px solid #8f0c07;
+    background-color: #8f0c07;
+    
 }
 
 a{

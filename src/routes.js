@@ -9,6 +9,7 @@ import recuperacion from './pages/RecuperarContra'
 import registroAdmis from './pages/RegistroAdmis'
 import pantallaRecibo from './pages/PantallaRecibo'
 
+
 export const routes = [
     {path:'/', component:FormData},
     {path:'/login', component:login},

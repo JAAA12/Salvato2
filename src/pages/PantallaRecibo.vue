@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="recibo" src="js/jspdf.min.js">
     <h1>Detalles Del Pedido</h1>
     <div class="form-group">
         <label for="formInput">Nombre</label>
@@ -47,24 +47,24 @@
             <option value="tienda">Se adquiere en punto salvato</option>
         </select>
     </div>
-    <button class="btn" @click="generaRecibo">
-            Pedir
-          </button>
-          <router-link to="/estadisticas" class="nav-link" active-class="active"
-              >estadisticas</router-link
-            >
-
+    <button class="btn" @click="generaRecibo"> Pedir</button>
 </div>
 
 </template>
 
-<script>
+<script >
 /* eslint-disable */
+import jsPDF from 'jspdf'
 import {ref} from 'vue' //ref crea un objeto
 import {useStore} from 'vuex'
 import {useRouter} from 'vue-router'
 import axios from 'axios'
+
 export default{
+
+    name: 'pdf',
+    
+   
 setup(){
     const store = useStore()
     const router = useRouter()
@@ -74,6 +74,8 @@ setup(){
     const pago = ref("")
     const nombrePedido = ref("")
     const telefono = ref("")
+    const datos = []
+    const hhh = "funciona"
     
     function generaRecibo(){
       if(hora.value != '' && fecha.value != ""){
@@ -90,10 +92,48 @@ setup(){
         axios.post('https://databasejaa-default-rtdb.firebaseio.com/recibo.json',recibo)
         .then(res=> console.log(res))
         .catch(error=> console.log(error))
+
+       
       }
+      axios.get('https://databasejaa-default-rtdb.firebaseio.com/recibo.json')
+      .then(res=>{
+        console.log(res);
+        console.log(nombrePedido .value,"Nombre")
+        
+      for(const id in res.data){
+        console.log(res.data[id].nombrePedido)
+        console.log(nombrePedido.value)
+        var pdf = new jsPDF();
+        datos.push({
+              nombrePedido: nombrePedido.value,
+              telefono: telefono.value,
+              hora: hora.value,
+              fecha: fecha.value,
+              entrega: entrega.value,
+              pago: pago.value
+
+              
+
+            })
+        
+
+            
+        }
+        console.log("hola mundo",datos[0]) 
+            datos.splice(1);
+            pdf.text(10,10,'' + [datos[0].nombrePedido] + [datos[0].telefono]);
+            console.log(datos,"infomacion")
+            pdf.save('Prueba.pdf');
+    
+                console.log("datos",datos.nombrePedido.value)
+                console.log(recibo)
+        
+      })
     }
 
-    return{hora, fecha,entrega,pago, telefono,nombrePedido,generaRecibo}
+    
+
+    return{hora, fecha,entrega,pago, telefono,nombrePedido,generaRecibo} 
 }
     
 }
