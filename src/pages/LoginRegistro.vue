@@ -12,7 +12,7 @@
       <!-- Login Form -->
       <form v-on:submit.prevent="login">
       
-          <select  name="LeaveType" @change="onchange()" class="form-control" id="perfil" v-model="key" >
+          <select  name="LeaveType" class="form-control" id="perfil" v-model="key" >
               <option value="" disabled>Seleccione Rol</option>
               <option :value="true">Cliente</option>
               <option :value="false">Administrador</option>
@@ -21,7 +21,7 @@
         <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="nombre">
         <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
   <!--       <input type="validar" id="validar" class="fadeIn third" name="login" placeholder="Validar" v-model="password">
-   -->      <button class="btn ingresar" @click="buscarUsuario">
+   -->      <button class="btn ingresar" v-on:click="onchange()" @click="buscarUsuario">
             Ingresar
           </button>
       </form>
