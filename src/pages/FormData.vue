@@ -19,7 +19,7 @@
           <label for="formGroupExampleInput2">E-mail</label>
           <input
             v-model="email "
-            type="text"
+            type="email"
             class="form-control"
             placeholder="E-mail"
           />
@@ -73,7 +73,7 @@ export default {
         console.log(nombre .value,"Nombre")
         console.log(password .value,"clave")
       for(const id in res.data){
-        console.log(res.data[id].nombre)
+        console.log(res.data[id].nombre, 'lo que necesito')
         console.log(nombre.value)
         if(res.data[id].nombre  === nombre.value){
           console.log("Hola",unica);

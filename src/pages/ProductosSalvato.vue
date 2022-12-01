@@ -2,7 +2,7 @@
 <div class='cuerpo'> 
 <header class='encabezado'>
     <img class='imglogo' src="../assets/Logosalvato.png" alt="No carga">
-    <v-spacer></v-spacer>
+ 
          <div class="carrito two columns">
                 <ul>
                     <li class="submenu">
@@ -246,7 +246,7 @@
                     </div> <!--.card-->
             </div>
         </div> <!--.row-->
-        <H2>Jarcakes</H2>
+        <h2>Jarcakes</h2>
         <div class="row">
             <div class="four columns">
                 <div class="card" id="jarcakes">
@@ -326,7 +326,7 @@
                    </div>
                 </div>
                 
-                <H2>TORTAS</H2>
+                <h2>TORTAS</h2>
                     <div class="row">
                        <div class="four columns">
                         <div class="card" id="tortas">

@@ -1,12 +1,12 @@
 <template>
-  <app-header class="mb-3" />
+  <app-header class="mb-3" :key ="mostrarN"/>
   <div class="container"><router-view /></div>
   <app-footer/>
 </template>
 
 
 <script>
-import Header from "./components/Header";
+import Header from "./components/HeaderCliente";
 import Footer from "./components/Footer";
 
 export default {
@@ -14,6 +14,12 @@ export default {
   components: {
     "app-header": Header,
     "app-footer": Footer,
+  },
+  data(){
+    return{
+        valornumero:this.$store.state.perfil,
+        mostrarN:this.$store.state.mostrar,
+    }
   },
 };
 </script>

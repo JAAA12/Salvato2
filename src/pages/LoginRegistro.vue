@@ -5,14 +5,14 @@
       <!-- Tabs Titles -->
   
       <!-- Icon -->
-      <div class="fadeIn first">
+      <div class="logoImg">
         <img src="@/assets/Logosalvato.png" id="icon" alt="User Icon" />
       </div>
   
       <!-- Login Form -->
       <form v-on:submit.prevent="login">
       
-          <select  name="LeaveType" @change="onchange()" class="form-control" id="perfil" v-model="key" >
+          <select  name="LeaveType" class="form-control" id="perfil" v-model="key" >
               <option value="" disabled>Seleccione Rol</option>
               <option :value="true">Cliente</option>
               <option :value="false">Administrador</option>
@@ -21,7 +21,7 @@
         <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="nombre">
         <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
   <!--       <input type="validar" id="validar" class="fadeIn third" name="login" placeholder="Validar" v-model="password">
-   -->      <button class="btn ingresar" @click="buscarUsuario">
+   -->      <button class="btn ingresar" v-on:click="onchange()" @click="buscarUsuario">
             Ingresar
           </button>
       </form>
@@ -29,10 +29,10 @@
       <!-- Remind Passowrd -->
       <div id="formFooter">
       <p class="registro">¿No tienes cuenta? <router-link to="/" id="link" class="nav-link" active-class="active"
-              >Registrarse</router-link
+              ><b>Registrarse</b></router-link
             ></p>
         <router-link to="/recuperacion" id="link" class="nav-link" active-class="active"
-              >Recuperar contraseña</router-link>
+              ><b>Recuperar contraseña</b></router-link>
       </div>
   
     </div>
@@ -47,6 +47,7 @@
   import {ref} from 'vue' //ref crea un objeto
   import axios from 'axios'
   import {useRouter} from 'vue-router'
+  
   
   export default {
     name: 'LoginRegistro',
@@ -85,6 +86,7 @@
           if(usuarios.length >= 1){
             alert("Usuario y contraseña correctos")
             router.push("/inicio")
+            
           }else{
             alert("Usuario y contaseña incorrecto")
           }
@@ -101,12 +103,31 @@
   data(){
         return{
           key: "",
+          valornumero:this.$store.state.perfil,
+          mostrarN:this.$store.state.mostrar,
         }
       
     },
+    
     methods: {
       onchange: function() {
-        console.log(this.key)
+        console.log(this.key,"key")
+        console.log(this.mostrarN,"mostrar")
+        console.log(this.valornumero,"mostrarnum")
+        if(this.key==true){
+          console.log(this.key)
+          this.$store.state.perfil=true,
+          this.$store.state.mostrar=false,
+          console.log(this.$store.state.mostrar,"admi")
+          
+        }
+        else{
+          console.log(this.key)
+          this.$store.state.perfil=false,
+          this.$store.state.mostrar=true,
+          console.log(this.$store.state.mostrar,"admifalse")
+          this.$forceUpdate();
+        }
       },
     }
   };
@@ -137,6 +158,9 @@
   
   
   <style>
+  .logoImg{
+    margin:20px;
+  }
   .ingresar{
     margin: 10px;
   }

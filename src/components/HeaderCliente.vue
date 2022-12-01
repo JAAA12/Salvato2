@@ -5,7 +5,7 @@
       <div class="enlaces">
       <ul class="nav">
         <li class="nav-item">
-          <router-link to="/inicio" class="nav-link" active-class="active"
+          <router-link to="/inicio"  class="nav-link" active-class="active" 
             >Inicio</router-link
           >
         </li>
@@ -19,23 +19,33 @@
             >Ubicación</router-link
           >
         </li>
+
         <li class="nav-item">
           <router-link to="/nosotros" class="nav-link" active-class="active"
             >Nosotros</router-link
           >
         </li>
+         
+         <li class="nav-item">
+          <router-link to="/registroAdmis" v-if="verificar" class="nav-link" active-class="active"
+            >Registro Administrador</router-link
+          >
+        </li>
+         <li class="nav-item">
+          <router-link to="/pagos" v-if="verificar" class="nav-link" active-class="active"
+            >Pagos</router-link
+          >
+        </li>  
+        <li class="nav-item">
+          <router-link to="/registroProductos" v-if="verificar" class="nav-link" active-class="active"
+            >Registrar Productos</router-link
+          >
+        </li> 
         <li class="nav-item">
           <router-link to="/login" class="nav-link" active-class="active"
             ><img src="../assets/logoinicio.webp" class="logoinicio"></router-link
-          >
-        </li>
-        <template v-if="key">
-        <li class="nav-item">
-          <router-link to="/registroAdmis" class="nav-link" active-class="active"
-            >Admi</router-link
-          >
-        </li>
-           </template>     
+          > 
+          </li>
       </ul>
     </div>
     </div>
@@ -44,21 +54,26 @@
 
 
 <script>
-  
-/*   export default {
-    name: 'LoginRegistro',
+
+export default {
   data(){
-        return{
-          key: "",
-        }
-      
-    },
-    methods: {
-      onchange: function() {
-        console.log(this.key)
-      },
+    return{
+        valornumero:this.$store.state.perfil,
+        mostrarN:this.$store.state.mostrar,
     }
-  }; */
+  },
+  computed: {
+     verificar(){
+      return this.$store.state.mostrar;
+    }
+  },
+  mounted(){
+    console.log(this.mostrarN,"mostrarrrr")
+    this.$forceUpdate();
+  }
+  
+};
+
 </script>
 
 

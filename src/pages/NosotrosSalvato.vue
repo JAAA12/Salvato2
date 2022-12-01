@@ -28,12 +28,6 @@
      
     </div>
 
-    <h1>{{nombreempresa}}</h1> 
-    <p>{{correo}}</p>
-    <p>{{representante}}</p>
-    <p>{{telefono}}</p>
-    <p>{{direccion}}</p>
-
 
   </div>
 
@@ -42,17 +36,7 @@
 
 
 <script>
-export default {
-  data(){
-    return{
-      nombreempresa:this.$store.state.nombreempresa,
-        correo:this.$store.state.correo,
-        representante:this.$store.state.representante,
-        telefono:this.$store.state.telefono,
-        direccion:this.$store.state.direccion,
-    }
-  },
-}
+
 </script>
 
 

@@ -48,6 +48,9 @@
         </select>
     </div>
     <button class="btn" @click="generaRecibo"> Pedir</button>
+   
+
+
 </div>
 
 </template>
@@ -93,7 +96,12 @@ setup(){
         .then(res=> console.log(res))
         .catch(error=> console.log(error))
 
+
        
+
+      }else{
+        alert('Ingrese todos los datos')
+
       }
       axios.get('https://databasejaa-default-rtdb.firebaseio.com/recibo.json')
       .then(res=>{
