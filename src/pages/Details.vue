@@ -45,6 +45,7 @@ export default {
       recibo.value = res.data
     })
     .catch(error=>console.log(error))
+    return{recibo}
   }
   // computed: {
   //   persona() {
