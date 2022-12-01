@@ -71,7 +71,6 @@ export default {
         alert('Registro exitoso')
       }
     }
-
     return{nombreAdmi, emailAdmi, passwordAdmi, addPersonaAdmi}
   }
 };

@@ -1,5 +1,5 @@
 import login from './pages/LoginRegistro.vue'
-import FormData from './pages/FormData.vue'
+import registro from './pages/RegistroUsuario.vue'
 import Details from './pages/Details.vue'
 import contactanos from './pages/ContactanosSalvato'
 import inicio from './pages/InicioSalvato'
@@ -15,7 +15,7 @@ import registroProductos from './pages/RegistroProductos'
 
 export const routes = [
     {path:'/login', component:login},
-    {path:'/', component:FormData},
+    {path:'/', component:registro},
     {path:'/details/:index', component:Details},
     {path:'/contactanos', component:contactanos},
     {path:'/inicio', component:inicio},
