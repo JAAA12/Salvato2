@@ -206,6 +206,9 @@ function llenarCarritoHTML(){
     filaTotal.innerHTML = `
     <td> Total Pedido  ${totalPedido} </td>
     `;
+    axios.post('https://databasejaa-default-rtdb.firebaseio.com/carro.json',producto)
+        .then(res=> console.log(res))
+        .catch(error=> console.log(error))
     contenedorCarrito.appendChild(fila);
     limpiarHtmlTotal();
     totalCarrito.appendChild(filaTotal);

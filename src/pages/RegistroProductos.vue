@@ -63,6 +63,7 @@ export default {
     function addProducto(){
       if(nombreProducto.value != '' && precio.value != ""){
         const persona = {
+          
           nombreProducto :nombreProducto .value,
           precio :precio .value,
           descripcion :descripcion .value,
