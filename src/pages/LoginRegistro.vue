@@ -22,12 +22,12 @@
         <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="nombre">
         <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
       </div>
-      <div class="Administrador" v-if="(key==false)" >
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="UsuarioAdmi" v-model="nombreAdmi">
-        <input type="password" id="password" class="fadeIn third" name="login" placeholder="PasswordAdmi" v-model="passwordAdmi">
+      <div class="Administrador" v-if="(key===false)" >
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="nombreAdmi">
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="passwordAdmi">
       </div>
   <!--       <input type="validar" id="validar" class="fadeIn third" name="login" placeholder="Validar" v-model="password">
-   -->      <button class="btn ingresar" v-on:click="onchange()" @click="buscarUsuario">
+   -->      <button class="btn ingresar" @click="buscarUsuario">
             Ingresar
           </button>
       </form>
@@ -62,7 +62,8 @@
       inputStyle: String,
       },
       
-    setup(){
+    setup()
+    {
       const router=useRouter()
       const usuarios = []
       const nombre = ref("")
@@ -74,101 +75,34 @@
       const nombreAdmi = ref("")
       /*const emailAdmi = ref("")*/
       const passwordAdmi = ref("")
-      
-      function buscarUsuario(){
-        
-          /* store.dispatch("addPersona", persona);
-          router.push('/print') */
-          console.log(this.key,"esta afuera")
-          if(this.key===true){
-            console.log("keeeey",this.key)
-          axios.get('https://databasejaa-default-rtdb.firebaseio.com/persona.json')
-          .then(res=>{
-            console.log(res,"resusuario");
-            console.log(nombre.value,"Nombre")
-            console.log(password.value,"clave")
-          for(const id in res.data){
-  
-            if(res.data[id].nombre === nombre.value && res.data[id].password === password.value){
-              console.log("Hola",usuarios);
-              usuarios.push({
-                id: id,
-                nombre: res.data[id].nombre,
-                password: res.data[id].password,
-              })
-            }
-          }
-          console.log("PruebaUsuarios",usuarios);
-          if(usuarios.length >= 1){
-            alert("Usuario y contraseña correctos")
-            router.push("/inicio")
-            
-          }else{
-            alert("Usuario y contaseña incorrecto")
-          }
-          usuarios.splice(0,1);
-          console.log("PruebaUsuarios",usuarios);
-          }) 
-          .catch(error => console.log(error))
-        }
-        /*es Admi*/
-        else{
-          console.log("keyfalse",this.key)
-          axios.get('https://databasejaa-default-rtdb.firebaseio.com/Admi.json')
-          .then(resAdmi=>{
-            console.log(resAdmi,"resadmi");
-            console.log(nombreAdmi.value,"Nombre Admi")
-            console.log(passwordAdmi.value,"clave Admi")
-          for(const idAdmi in resAdmi.data){
-  
-            if(resAdmi.data[idAdmi].nombreAdmi === nombreAdmi.value && resAdmi.data[idAdmi].passwordAdmi === passwordAdmi.value){
-              console.log("HolaAdmi",admis);
-              admis.push({
-                idAdmi: idAdmi,
-                nombreAdmi: resAdmi.data[idAdmi].nombreAdmi,
-                passwordAdmi: resAdmi.data[idAdmi].passwordAdmi,
-              })
-            }
-          }
-          console.log("PruebaAdmi",admis);
-          if(admis.length >= 1){
-            alert("Admi y contraseña correctos")
-            router.push("/inicio")
-            
-          }else{
-            alert("Admi y contaseña incorrecto")
-          }
-          admis.splice(0,1);
-          console.log("PruebaAdmi",admis);
-          }) 
-          .catch(error => console.log(error))
-        }
-        return{nombre,password,usuarios,buscarUsuario,nombreAdmi,passwordAdmi};
-      }
-      
-  },
-  data(){
-        return{
-          key: "",
-          valornumero:this.$store.state.perfil,
-          mostrarN:this.$store.state.mostrar,
-        }
-      
+      return{nombre,password,usuarios,nombreAdmi,passwordAdmi,admis,router};
     },
+
+  data()
+  {
+    return{
+      key: "",
+      valornumero:this.$store.state.perfil,
+      mostrarN:this.$store.state.mostrar,
+    }
+  },
     
     methods: {
-      onchange: function() {
+      onchange: function() 
+      {
         console.log(this.key,"key")
         console.log(this.mostrarN,"mostrar")
         console.log(this.valornumero,"mostrarnum")
-        if(this.key==true){
+        if(this.key===true)
+        {
           console.log(this.key)
           this.$store.state.perfil=true,
           this.$store.state.mostrar=false,
           console.log(this.$store.state.mostrar,"admi")
           
         }
-        else{
+        else
+        {
           console.log(this.key)
           this.$store.state.perfil=false,
           this.$store.state.mostrar=true,
@@ -176,8 +110,90 @@
           this.$forceUpdate();
         }
       },
-    }
-  };
+      buscarUsuario: function()
+      {
+        /* store.dispatch("addPersona", persona);
+        router.push('/print') */
+          console.log(this.key,"esta afuera")
+        if(this.key===true)
+          {
+            console.log("key CLIENTE",this.key)
+            axios.get('https://databasejaa-default-rtdb.firebaseio.com/persona.json')
+            .then(res=>{
+            console.log(res,"resusuario");
+            console.log(this.nombre,"Nombre")
+            console.log(this.password,"clave")
+            for(const id in res.data)
+            {
+              if(res.data[id].nombre === this.nombre && res.data[id].password === this.password)
+              {
+                console.log("Hola",this.usuarios);
+                this.usuarios.push
+                ({
+                  id: id,
+                  nombre: res.data[id].nombre,
+                  password: res.data[id].password,
+                })
+              }
+            }
+            console.log("PruebaUsuarios",this.usuarios);
+            if(this.usuarios.length >= 1)
+            {
+              alert("Usuario y contraseña correctos")
+              this.router.push("/inicio")
+              this.onchange()
+            }
+            else
+            {
+              alert("Usuario y contaseña incorrecto")
+            }
+            this.usuarios.splice(0,1);
+            console.log("PruebaUsuarios",this.usuarios);
+            }) 
+            .catch(error => console.log(error))
+          }/*cierre de if CLIENTE*/
+        /*es Admi*/
+        else
+        {
+          console.log("key ADMINISTRADOR",this.key)
+          axios.get('https://databasejaa-default-rtdb.firebaseio.com/Admi.json')
+          .then(resAdmi=>{
+            console.log(resAdmi,"resadmi");
+            console.log(this.nombreAdmi,"Nombre Admi")
+            console.log(this.passwordAdmi,"clave Admi")
+            for(const idAdmi in resAdmi.data)
+            {
+
+              if(resAdmi.data[idAdmi].nombreAdmi === this.nombreAdmi && resAdmi.data[idAdmi].passwordAdmi === this.passwordAdmi)
+              {
+                console.log("HolaAdmi",this.admis);
+                this.admis.push
+                ({
+                  idAdmi: idAdmi,
+                  nombreAdmi: resAdmi.data[idAdmi].nombreAdmi,
+                  passwordAdmi: resAdmi.data[idAdmi].passwordAdmi,
+                })
+              }
+            }
+          console.log("PruebaAdmi",this.admis);
+          if(this.admis.length >= 1)
+          {
+            alert("Admi y contraseña correctos")
+            this.router.push("/inicio")
+            this.onchange()
+          }
+          else
+          {
+            alert("Admi y contaseña incorrecto")
+          }
+          this.admis.splice(0,1);
+          console.log("PruebaAdmi",this.admis);
+          }) 
+          .catch(error => console.log(error))
+        }/*cierre de else ADMINITRADOR*/
+      }/*cierre de FUNCIÓN*/
+    }/*cierre de METHODS*/
+  };/*cierre de EXPORTDEFAULT*/
     
     // data() {
     //   return {
