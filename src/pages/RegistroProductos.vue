@@ -19,7 +19,7 @@
           <label for="formGroupExampleInput2">Precio</label>
           <input
             v-model="precio "
-            type="precio"
+            type="number"
             class="form-control"
             placeholder="Precio"
           />
@@ -65,7 +65,7 @@ export default {
         const persona = {
           nombreProducto :nombreProducto .value,
           precio :precio .value,
-          descripcion :descripcion .value
+          descripcion :descripcion .value,
         }
         axios.get('https://databasejaa-default-rtdb.firebaseio.com/productos.json')
       .then(res=>{

@@ -49,386 +49,23 @@
         <h1 id="titulo1" class="titulo1">Nuestros Productos</h1>
         <h2>SALVATOS</h2>
          
-        <div class="row">
+        <div class="row" v-for="(productos, i) in productosVector" :key="i">
                     <div class="four columns">
                             <div class="card" id="salvatos">
                                 <img src="../assets/salvato_clasico.jpg" class="imagen-curso u-full-width">
                                 <div class="info-card">
-                                    <h4>Salvato Clásico</h4>
-                                    <p>Pan de banano con nuez, almendra laminada y chocolate troceado.
+                                    <h4 >{{productos.nombreProducto}}</h4>
+                                    <p >{{productos.descripcion}}
                                     </p>
                                     <img src="../assets/estrellas.png">
-                                    <p class="precio">Regular<span class="u-pull-right ">$17500</span></p>
-                                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="2">Agregar Al Carrito</a>
+                                    <p  class="precio">Regular<span class="u-pull-right ">${{productos.precio}}</span></p>
+                                    <a @click="carrito" ref="agregar" href="#" class="u-full-width button-primary button input agregar-carrito"  data-id="2">Agregar Al Carrito</a>
                                 </div>
                             </div>
                     </div>
-            
-                    <div class="four columns">
-                            <div class="card">
-                                <img src="../assets/salvato_chocomani.jpg" class="imagen-curso u-full-width">
-                                <div class="info-card">
-                                    <h4>Salvato Chocomaní</h4>
-                                    <p>Pan de banano y chocolate con chocolate troceado y maní molido.</p>
-                                    <img src="../assets/estrellas.png">
-                                    <p class="precio">Regular <span class="u-pull-right ">$17000</span></p>
-                                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="3">Agregar Al Carrito</a>
-                                </div>
-                            </div> <!--.card-->
-                    </div>
-               
-                    <div class="four columns">
-                        <div class="card">
-                            <img src="../assets/salvato_frutos.jpg" class="imagen-curso u-full-width">
-                            <div class="info-card">
-                                <h4>Salvato Frutos Rojos</h4>
-                                <p>Pan de frutos rojos con un centro de mermelada de moras.</p>
-                                <img src="../assets/estrellas.png">
-                                <p class="precio">Regular  <span class="u-pull-right ">$17000</span></p>
-                                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="4">Agregar Al Carrito</a>
-                            </div>
-                        </div> <!--.card-->
-                    </div>
+                   
         </div>
-                    <div class="row">
-                        <div class="four columns">
-                            <div class="card">
-                                <img src="../assets/salvato_cocoarequipe.jpg" class="imagen-curso u-full-width">
-                                <div class="info-card">
-                                    <h4>Salvato Cocoarequipe</h4>
-                                    <p>Coco deshidratado, con un centro de arequipe.</p>
-                                    <img src="../assets/estrellas.png">
-                                    <p class="precio">Regular  <span class="u-pull-right ">$17000</span></p>
-                                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="5">Agregar Al Carrito</a>
-                                </div>
-                            </div> <!--.card-->
-                        </div>
-                        <div class="four columns">
-                            <div class="card">
-                                <img src="../assets/salvato_coffee.jpeg" class="imagen-curso u-full-width">
-                                <div class="info-card">
-                                    <h4>Salvato Coffee</h4>
-                                    <p>Base de banano y nueces, cuebierto con arequipe y alfajol pulverizado.</p>
-                                    <img src="../assets/estrellas.png">
-                                    <p class="precio">Regular <span class="u-pull-right ">$22000</span></p>
-                                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="6">Agregar Al Carrito</a>
-                                </div>
-                            </div> <!--.card-->
-                        </div>
-                        <div class="four columns">
-                            <div class="card">
-                                <img src="../assets/salvato_chocofresa.jpg" class="imagen-curso u-full-width">
-                                <div class="info-card">
-                                    <h4>Salvato Chocofresa</h4>
-                                    <p>Mermelada de fresa artesanal con trozos de chocolate.</p>
-                                    <img src="../assets/estrellas.png">
-                                    <p class="precio">Regular  <span class="u-pull-right ">$18000</span></p>
-                                    <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="7">Agregar Al Carrito</a>
-                                </div>
-                            </div> <!--.card-->
-                        </div>
-                    </div>
-        <h2>PANES</h2> <!--.row-->
-        <div class="row">
-            
-            <div class="four columns">
-                <div class="card" id="panes">
-                    <img src="../assets/pan_semillas.jpg" class="imagen-curso u-full-width">
-                    <div class="info-card">
-                        <h4>Pan de Semillas</h4>
-                        <p>Contiene semillas de linaza, chía, ajonjolí, girasol  y calabaza.</p>
-                        <img src="../assets/estrellas.png">
-                        <p class="precio">Regular <span class="u-pull-right ">$9000</span></p>
-                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="8">Agregar Al Carrito</a>
-                    </div>
-                </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/mogolla_cua.jpg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Mogollas de Cuajada</h4>
-                            <p>Harina de avena, integral, chía y linaza, con cuajada criolla.</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Regular  <span class="u-pull-right ">$10000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="9">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/mogolla_inte.jpg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Mogolla Integral</h4>
-                            <p>Semillas de chía, linaza, calabaza, ajonjolí, girasol y finas hiervas.</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Regular <span class="u-pull-right ">$10000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="10">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-        </div> <!--.row-->
-        <div class="row">
-            
-            <div class="four columns">
-                <div class="card">
-                    <img src="../assets/pan_italianisimo.jpg" class="imagen-curso u-full-width">
-                    <div class="info-card">
-                        <h4>Pan Italianisimo</h4>
-                        <p>Rollo italiano con finas hiervas, queso parmesano, mozarella.</p>
-                        <img src="../assets/estrellas.png">
-                        <p class="precio">Regular <span class="u-pull-right ">$11000</span></p>
-                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="11">Agregar Al Carrito</a>
-                    </div>
-                </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/Hawaiano.jpeg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Pan Hawaiano</h4>
-                            <p>Pan con semillas relleno de jamón de pavo, tocineta, piña y queso.</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Regular  <span class="u-pull-right ">$14000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="12">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/babka_chocolate.jpg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Babka de Chocolate</h4>
-                            <p>Pan con harina integral, mezclado con chocolate 70% cacao.</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Regular <span class="u-pull-right ">$13000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="13">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-        </div> <!--.row-->
-        
-        <div class="row">
-                <div class="four columns">
-                <div class="card">
-                    <img src="../assets/babka_veleno.jpg" class="imagen-curso u-full-width">
-                    <div class="info-card">
-                        <h4>Babka Veleño</h4>
-                        <p>Babka de harina madre relleno con cuajada campesina y bocadillo.</p>
-                        <img src="../assets/estrellas.png">
-                        <p class="precio">Regular <span class="u-pull-right ">$11000</span></p>
-                        <a  href="#" class="u-full-width button-primary button input agregar-carrito" data-id="14" >Agregar Al Carrito</a>
-                    </div>
-                </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/babka_americano.jpg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Babka Americano</h4>
-                            <p>Babka de harina madre relleno de tocineta de cerdo y queso sabana.</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Regular  <span class="u-pull-right ">$12000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="15">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/Otoño.jpeg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Pan de Otoño</h4>
-                            <p>Pan con uvas pasas, arándanos, nuez, coco deshidratado y canela.</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Regular <span class="u-pull-right ">$11000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="16">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-        </div> <!--.row-->
-        <h2>Jarcakes</h2>
-        <div class="row">
-            <div class="four columns">
-                <div class="card" id="jarcakes">
-                    <img src="../assets/jarcake_amapola.jpg" class="imagen-curso u-full-width">
-                    <div class="info-card">
-                        <h4>Jarcakes de Amapola</h4>
-                        <p>Torta amapola, nueces, arándanos, frosting de yogurt griego y limón.</p>
-                        <img src="../assets/estrellas.png">
-                        <p class="precio">Vidrio  <span class="u-pull-right ">$12000</span></p>
-                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="17">Agregar Al Carrito</a>
-                    </div>
-                </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/jarcake_brownie.jpg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Jarcake de Brownie</h4>
-                            <p>Elaborado con harina de frijol, cacao al 70%, con maní y arequipe.</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Vidrio  <span class="u-pull-right ">$12000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="18">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/jarcake_frutos.jpg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Jarcake de Frutos Rojos</h4>
-                            <p>Torta de vainilla, mermelada artesanal de mora y arequipe.</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Vidrio <span class="u-pull-right ">$12000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="19">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-        </div> <!--.row-->
-        
-        <div class="row">
-                <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/jarcake_zanahoria.jpg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Jarcake de Zanahoria</h4>
-                            <p>Torta de zanahoria con naranja y nueces del Brasil.</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Vidrio <span class="u-pull-right ">$12000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="20">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-                </div>
-                <div class="four columns">
-                        <div class="card">
-                            <img src="../assets/jarcake_red.jpg" class="imagen-curso u-full-width">
-                            <div class="info-card">
-                                <h4>Jarcake Red Velvet</h4>
-                                <p>Torta de red velvet con frosting de yogurt griego.</p>
-                                <img src="../assets/estrellas.png">
-                                <p class="precio">Vidrio  <span class="u-pull-right ">$12000</span></p>
-                                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="21">Agregar Al Carrito</a>
-                            </div>
-                        </div> <!--.card-->
-                </div>
-                <div class="four columns">
-                        <div class="card">
-                            <img src="../assets/jarcake_red.jpg" class="imagen-curso u-full-width">
-                            <div class="info-card">
-                                <h4>Jarcake Tres Leches</h4>
-                                <p>Torta tres leches con semillas y arequipe.
-                                </p>
-                                <img src="../assets/estrellas.png">
-                                <p class="precio">Vidrio <span class="u-pull-right ">$12000</span></p>
-                                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="22">Agregar Al Carrito</a>
-                            </div>
-                        </div> <!--.card-->
-                   </div>
-                </div>
-                
-                <h2>TORTAS</h2>
-                    <div class="row">
-                       <div class="four columns">
-                        <div class="card" id="tortas">
-                            <img src="../assets/torta_sebastiana.jpg" class="imagen-curso u-full-width">
-                            <div class="info-card">
-                                <h4>Torta Sebastiana</h4>
-                                <p>Para nuestras superheroínas</p>
-                                <img src="../assets/estrellas.png">
-                                <p class="precio">Regular  <span class="u-pull-right ">$17500</span></p>
-                                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="23">Agregar Al Carrito</a>
-                            </div>
-                        </div> <!--.card-->
-                </div>
-                <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/torta_amapola.jpeg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Torta Amapola</h4>
-                            <p>Para nuestras superheroínas</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Regular <span class="u-pull-right ">$24000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="12">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                <div class="card">
-                    <img src="../assets/torta_chocolate.jpg" class="imagen-curso u-full-width">
-                    <div class="info-card">
-                        <h4>Torta de Chocolate</h4>
-                        <p>Para nuestras superheroínas</p>
-                        <img src="../assets/estrellas.png">
-                        <p class="precio">Regular  <span class="u-pull-right ">$25000</span></p>
-                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="12">Agregar Al Carrito</a>
-                    </div>
-                </div> <!--.card-->
-            </div> <!--.row-->
         </div>
-    
-                    <div class="row">
-                        <div class="four columns">
-                         <div class="card">
-                             <img src="../assets/torta_zanahoria.jpeg" class="imagen-curso u-full-width">
-                             <div class="info-card">
-                                 <h4>Carrot Cake</h4>
-                                 <p>Para nuestras superheroínas</p>
-                                 <img src="../assets/estrellas.png">
-                                 <p class="precio">Regular  <span class="u-pull-right ">$29000</span></p>
-                                 <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="23">Agregar Al Carrito</a>
-                             </div>
-                         </div> <!--.card-->
-                 </div>
-                 <div class="four columns">
-                     <div class="card">
-                         <img src="../assets/torta_red.jpg" class="imagen-curso u-full-width">
-                         <div class="info-card">
-                             <h4>Torta Red Velvet</h4>
-                             <p>Para nuestras superheroínas</p>
-                             <img src="../assets/estrellas.png">
-                             <p class="precio">Regular <span class="u-pull-right ">$29000</span></p>
-                             <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="12">Agregar Al Carrito</a>
-                         </div>
-                     </div> <!--.card-->
-             </div>
-             <div class="four columns">
-                 <div class="card">
-                     <img src="../assets/torta_vino.jpeg" class="imagen-curso u-full-width">
-                     <div class="info-card">
-                         <h4>Torta de Vino</h4>
-                         <p>Para nuestras superheroínas</p>
-                         <img src="../assets/estrellas.png">
-                         <p class="precio">Regular  <span class="u-pull-right ">$29000</span></p>
-                         <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="12">Agregar Al Carrito</a>
-                     </div>
-                 </div> <!--.card-->
-             </div> <!--.row-->
-            </div>
-
-            <!-- <div class="slider"> -->
-
-            <div class="row">
-                <div class="four columns">
-                    <div class="card">
-                        <img src="../assets/torta_chocofusion.jpg" class="imagen-curso u-full-width">
-                        <div class="info-card">
-                            <h4>Torta Chocofusión</h4>
-                            <p>Para nuestras superheroínas</p>
-                            <img src="../assets/estrellas.png">
-                            <p class="precio">Regular  <span class="u-pull-right ">$29000</span></p>
-                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="23">Agregar Al Carrito</a>
-                        </div>
-                    </div> <!--.card-->
-                </div>
-            </div>
-  </div>
-  <div class="store">
-        <h1>{{nombreempresa}}</h1>
-        <p>{{correo}}</p>
-        <p>{{representante}}</p>
-        <p>{{telefono}}</p>
-        <p>{{direccion}}</p>
-  </div>
 </div>
 
 </template>
@@ -436,25 +73,39 @@
 
 
 <script>
-
 /* eslint-disable */
+import axios from 'axios'
+import {ref} from 'vue'
 export default {
-  data(){
-    return{
-        nombreempresa:this.$store.state.nombreempresa,
-        correo:this.$store.state.correo,
-        representante:this.$store.state.representante,
-        telefono:this.$store.state.telefono,
-        direccion:this.$store.state.direccion,
-    }
-  },
-  computed:{
-    valorstore(){
-        return this.$store.state
-    }
-  },
-mounted(){
-const carrito = document.querySelector('#carro');
+  setup(){
+    const productosVector = ref([])
+    axios.get('https://databasejaa-default-rtdb.firebaseio.com/productos.json')
+    .then(res=>{
+      console.log(res)
+      for(const id in res.data){
+        productosVector.value.push({
+          id: id,
+          nombreProducto: res.data[id].nombreProducto,
+          descripcion: res.data[id].descripcion,
+          precio: res.data[id].precio,
+        })
+      }
+    })
+    .catch(error=> console.log(error))
+    
+    return {productosVector };
+       
+   
+    },
+
+
+    /* function agregarProducto(){
+       const articuloCarrito = []
+       console.log(articuloCarrito, 'muestra el vector')
+    } */
+  
+ mounted(){
+    const carrito = document.querySelector('#carro');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
 const totalCarrito = document.querySelector('#lista-carrito thead');
 const vaciarCarritoBoton = document.querySelector('#vaciar-carrito');
@@ -570,9 +221,9 @@ function limpiarHtmlTotal(){
     totalCarrito.innerHTML = '';
 };
 
-  }
-  
-}
+ },
+ 
+};
   
 </script>
 
