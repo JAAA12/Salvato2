@@ -1,29 +1,6 @@
 <template>
 <div id="recibo" src="js/jspdf.min.js">
     <h1>Detalles Del Pedido</h1>
-                           <div id="carro">
-                                    
-                                <table id="lista-carrito" class="u-full-width">
-                                    <thead>
-                                        <tr>
-                                            <th>Imagen</th>
-                                            <th>Nombre</th>
-                                            <th>Precio</th>
-                                            <th>Cantidad</th>
-                                            <th>total</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody v-for="(carro, j) in producto" :key="j">
-                                <td> {producto.imagen} </td>
-                                <td> {{producto[0].titulo}} </td>
-                                <td> {{producto[0].precio}} </td>
-                                <td> {{producto[0].cantidad}} </td>
-                                <td> {{producto[0].total}} </td>
-                                <td> <a href= "#" class="borrar-curso" data-id="{producto.id}"> X </a> </td>
-                                    </tbody>
-                                </table>
-                            </div>
     <div class="form-group">
         <label for="formInput">Nombre</label>
         <input 
@@ -59,15 +36,15 @@
     <div class="form-group">
         <label for="select">Seleccione Método De Pago</label>
         <select name="form" id="metodo-pago" v-model="pago">
-            <option value="transferencia">Transferencia</option>
-            <option value="efectivo">Efectivo</option>
+            <option value="Transferencia">Transferencia</option>
+            <option value="Efectivo">Efectivo</option>
         </select>
     </div>
     <div class="form-group">
         <label for="sele">Seleccione Modo De Entrega</label>
         <select name="form" id="metodo-entrega" v-model="entrega">
-            <option value="domicilio">Domicilio</option>
-            <option value="tienda">Se adquiere en punto salvato</option>
+            <option value="Domicilio">Domicilio</option>
+            <option value="Tienda">Se adquiere en punto salvato</option>
         </select>
     </div>
     <button class="btn" @click="generaRecibo"> Pedir</button>
@@ -83,7 +60,7 @@
 import jsPDF from 'jspdf'
 import {ref} from 'vue' //ref crea un objeto
 import {useStore} from 'vuex'
-import {useRoute} from 'vue-router'
+import {useRouter} from 'vue-router'
 import axios from 'axios'
 
 export default{
@@ -93,7 +70,7 @@ export default{
    
 setup(){
     const store = useStore()
-    const route = useRoute()
+    const router = useRouter()
     const hora = ref("")
     const fecha = ref("")
     const entrega = ref("")
@@ -101,6 +78,7 @@ setup(){
     const nombrePedido = ref("")
     const telefono = ref("")
     const datos = []
+    const hhh = "funciona"
     
     function generaRecibo(){
       if(hora.value != '' && fecha.value != ""){
@@ -134,6 +112,7 @@ setup(){
         console.log(res.data[id].nombrePedido)
         console.log(nombrePedido.value)
         var pdf = new jsPDF();
+        var logo = new Image()
         datos.push({
               nombrePedido: nombrePedido.value,
               telefono: telefono.value,
@@ -151,38 +130,34 @@ setup(){
         }
         console.log("hola mundo",datos[0]) 
             datos.splice(1);
-            pdf.text(10,10,'' + [datos[0].nombrePedido] + [datos[0].telefono] + [producto[0]]);
+
+            logo.src = '../assets/Logosalvato.png'
+
+            
+
+            pdf.text(10,10, 'Nombre del Cliente: ' + [datos[0].nombrePedido] + '\n' +
+            'Teléfono: ' + [datos[0].telefono] + '\n' +
+            'Fecha de Entrega: ' + [datos[0].fecha] + '\n'+
+            'Hora de Entrega: ' + [datos[0].hora] + '\n' +
+            'Método de Pago: ' + [datos[0].pago] + '\n' + 
+            'Método de Entrega: ' + [datos[0].entrega],
+            {align:'left',lineHeightFactor: 2,maxWidth:150});
+
             console.log(datos,"infomacion")
+            pdf.setFontSize(70)
+            pdf.setFont('times new roman')
+
             pdf.save('Prueba.pdf');
     
                 console.log("datos",datos.nombrePedido.value)
                 console.log(recibo)
         
       })
-      
     }
-    
-
-   /*  const persona = computed(()=>{ */
-     const producto = ref([])
-    axios.get('https://databasejaa-default-rtdb.firebaseio.com/carro.json')
-    .then(res=>{
-      console.log(res)
-      for(const id in res.data){
-        producto.value.push({
-          id: id,
-          titulo: res.data[id].titulo,
-          precio: res.data[id].precio,
-          cantidad: res.data[id].cantidad
-        })
-      }
-    })
-    .catch(error=> console.log(error))
-   
 
     
 
-    return{hora, fecha,entrega,pago, telefono,nombrePedido,generaRecibo, producto} 
+    return{hora, fecha,entrega,pago, telefono,nombrePedido,generaRecibo} 
 }
     
 }
