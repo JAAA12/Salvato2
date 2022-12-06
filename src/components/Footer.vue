@@ -37,7 +37,6 @@
                           <br> Lunes a Sábado <br> 8am-6pm</a>
                         <a class="enlace" href="#"><b>Lugares:</b> <br> Pedidos en area <br> 
                            Metropolitana de Bucaramanga<br></a>
-                           <router-link to="/login" class="nav-link" >s</router-link>
                     </nav>
             </div>
           </div>

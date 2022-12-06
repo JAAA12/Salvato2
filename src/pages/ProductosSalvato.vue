@@ -21,6 +21,7 @@
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
+                                    
                                 </table>
 
                                     <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
@@ -106,10 +107,10 @@ export default {
   
  mounted(){
     const carrito = document.querySelector('#carro');
-const contenedorCarrito = document.querySelector('#lista-carrito tbody');
-const totalCarrito = document.querySelector('#lista-carrito thead');
-const vaciarCarritoBoton = document.querySelector('#vaciar-carrito');
-const liProductos = document.querySelector('#lista-cursos');
+    const contenedorCarrito = document.querySelector('#lista-carrito tbody');
+    const totalCarrito = document.querySelector('#lista-carrito thead');
+    const vaciarCarritoBoton = document.querySelector('#vaciar-carrito');
+    const liProductos = document.querySelector('#lista-cursos');
 console.log(totalCarrito);
 let articuloCarrito = [];
 let totalPedido = 0;
@@ -192,36 +193,36 @@ function llenarCarritoHTML(){
  articuloCarrito.forEach(producto =>{
     const fila = document.createElement('tr');
     fila.innerHTML = `
-    <td> <img src=${producto.imagen} width = "150%"> </td>
+    <td> <img src=${producto.imagen} width="90"></td>
     <td> ${producto.titulo} </td>
     <td> ${producto.precio} </td>
     <td> ${producto.cantidad} </td>
     <td> ${producto.total} </td>
-    <td> <a href= "#" class="borrar-curso" data-id="${producto.id}"> X </a> </td>
+    <td> <a href= "#" class="borrar-curso" data-id="${producto.id}">X</td>
     `;
 
     totalPedido = totalPedido + producto.total;
 
     const filaTotal = document.createElement('tr');
     filaTotal.innerHTML = `
-    <td> Total Pedido  ${totalPedido} </td>
+    <td>Total Pedido: ${totalPedido} </td>
     `;
     axios.post('https://databasejaa-default-rtdb.firebaseio.com/carro.json',producto)
         .then(res=> console.log(res))
         .catch(error=> console.log(error))
     contenedorCarrito.appendChild(fila);
     limpiarHtmlTotal();
-    totalCarrito.appendChild(filaTotal);
+    totalCarrito[1].appendChild(filaTotal);
 
  })
 };
 
 
 function limpiarHTML(){
-    contenedorCarrito.innerHTML = '';
+    contenedorCarrito.innerHTML = "";
 };
 function limpiarHtmlTotal(){
-    totalCarrito.innerHTML = '';
+    totalCarrito.innerHTML = "";
 };
 
  },
@@ -278,12 +279,12 @@ margin-left: 80px;
 .submenu{
     margin-left: 20px;
     position: relative;
-    padding: 20px 40px 10px 60px;
+    padding: 10px 100px 10px 80px;
 }
   
 .submenu #carro{
     display: none;
-    margin:20px;
+    margin-right:-190px;
 }
 
 .submenu:hover #carro{
@@ -297,7 +298,49 @@ margin-left: 80px;
     min-height: 400px;
     min-width: 300px;
 }
-
+/*puse*/
+th,
+td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+.container:after,
+.row:after,
+.u-cf {
+    content: "";
+    display: table;
+    clear: both; }
+    button,
+    .button {
+      margin-bottom: 1rem; }
+    input,
+    textarea,
+    select,
+    fieldset {
+      margin-bottom: 1.5rem; }
+    pre,
+    blockquote,
+    dl,
+    figure,
+    table,
+    p,
+    ul,
+    ol,
+    form {
+      margin-bottom: 2.5rem; }
+    th {
+        display: table-cell;
+        vertical-align: inherit;
+        font-weight: bold;
+    }
+    
+/*hasta acá*/
 #grecibo{
     margin: 5px;
     text-align: center;
