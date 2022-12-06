@@ -60,7 +60,7 @@
                                     </p>
                                     <img src="../assets/estrellas.png">
                                     <p  class="precio">Regular<span class="u-pull-right ">${{productos.precio}}</span></p>
-                                    <a @click="carrito" ref="agregar" href="#" class="u-full-width button-primary button input agregar-carrito"  data-id="2">Agregar Al Carrito</a>
+                                    <a @click="carrito" ref="agregar" href="#" class="u-full-width button-primary button input agregar-carrito"  :data-id=productos.id>Agregar Al Carrito</a>
                                 </div>
                             </div>
                     </div>
@@ -80,12 +80,14 @@ import {ref} from 'vue'
 export default {
   setup(){
     const productosVector = ref([])
+    
     axios.get('https://databasejaa-default-rtdb.firebaseio.com/productos.json')
     .then(res=>{
       console.log(res)
       for(const id in res.data){
+        console.log("nombre",res.data[id].nombreProducto)
         productosVector.value.push({
-          id: id,
+          id: res.data[id].id,
           nombreProducto: res.data[id].nombreProducto,
           descripcion: res.data[id].descripcion,
           precio: res.data[id].precio,
@@ -163,8 +165,12 @@ function leerDatos(productos){
     console.log("existe",existe);
     //validar si existe y aumentar cantidad y precio total
     if(existe){
+        
         const cantidadTotal = articuloCarrito.map(producto =>{
+            console.log("prodctos",producto.id)
+        console.log("info",infoProductos.id)
             if(producto.id === infoProductos.id){
+
                 console.log("precio",producto.precio.length);
                 producto.cantidad++;
                 producto.total = producto.cantidad * parseInt(producto.precio.substr(1,producto.precio.length));
@@ -212,7 +218,7 @@ function llenarCarritoHTML(){
         .catch(error=> console.log(error))
     contenedorCarrito.appendChild(fila);
     limpiarHtmlTotal();
-    totalCarrito[1].appendChild(filaTotal);
+    totalCarrito.appendChild(filaTotal);
 
  })
 };

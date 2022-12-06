@@ -59,32 +59,41 @@ export default {
     const nombreProducto = ref("")
     const precio  = ref("")
     const descripcion = ref("")
+    let cantidad= 0
+    const total=1
     
     function addProducto(){
+      
+      
       if(nombreProducto.value != '' && precio.value != ""){
-        const persona = {
-          
+        axios.get('https://databasejaa-default-rtdb.firebaseio.com/productos.json')
+      .then(res=>{
+      for(const id in res.data){
+        cantidad=cantidad+1   
+         
+      }
+      console.log(cantidad,"cantidad")
+      const persona = {
+          id:cantidad,
           nombreProducto :nombreProducto .value,
           precio :precio .value,
           descripcion :descripcion .value,
         }
         axios.get('https://databasejaa-default-rtdb.firebaseio.com/productos.json')
       .then(res=>{
-        console.log(res);
-        console.log(nombreProducto .value,"Nombre")
-        console.log(descripcion .value,"clave")
+        
       for(const id in res.data){
-        console.log(res.data[id].nombreProducto, 'lo que necesito')
-        console.log(nombreProducto.value)
+     
+
         if(res.data[id].nombreProducto  === nombreProducto.value){
-          console.log("Hola",pro);
+          
         encontroproducto=1;
         }
         
       }
       console.log(encontroproducto,"Encontro")
       console.log(pro.length,"pro")
-      if(encontroproducto == 1){
+      if(encontroproducto === 1){
           alert("esta registrado")
           encontroproducto=0
         }else{
@@ -109,11 +118,13 @@ export default {
         /* store.dispatch("addPersona", persona);
         router.push('/print') */
         console.log("leer")
+    })
+        
       }
       
   }
           
-  return{nombreProducto,descripcion,pro,precio,addProducto};
+  return{nombreProducto,descripcion,pro,precio,addProducto,cantidad,total};
     }
 
 };
