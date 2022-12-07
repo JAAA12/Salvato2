@@ -15,10 +15,10 @@ import registroProductos from './pages/RegistroProductos'
 
 export const routes = [
     {path:'/login', component:login},
-    {path:'/', component:registro},
+    {path:'/registo', component:registro},
     {path:'/details/:index', component:Details},
     {path:'/contactanos', component:contactanos},
-    {path:'/inicio', component:inicio},
+    {path:'/', component:inicio},
     {path:'/productos', component:productos},
     {path:'/nosotros', component:nosotros},
     {path:'/recuperacion', component:recuperacion},

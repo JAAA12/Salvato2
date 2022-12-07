@@ -34,7 +34,7 @@
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
-      <p class="registro">¿No tienes cuenta? <router-link to="/" id="link" class="nav-link" active-class="active"
+      <p class="registro">¿No tienes cuenta? <router-link to="/registro" id="link" class="nav-link" active-class="active"
               ><b>Registrarse</b></router-link
             ></p>
         <router-link to="/recuperacion" id="link" class="nav-link" active-class="active"
@@ -140,7 +140,7 @@
             if(this.usuarios.length >= 1)
             {
               alert("Usuario y contraseña correctos")
-              this.router.push("/inicio")
+              this.router.push("/")
               this.onchange()
             }
             else
@@ -179,7 +179,7 @@
           if(this.admis.length >= 1)
           {
             alert("Admi y contraseña correctos")
-            this.router.push("/inicio")
+            this.router.push("/")
             this.onchange()
           }
           else
