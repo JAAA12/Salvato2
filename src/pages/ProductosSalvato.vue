@@ -8,21 +8,21 @@
                     <li class="submenu">
                             <img src="../assets/carro.png" id="img-carrito">
                             <div id="carro">
-                                    
-                                <table id="lista-carrito" class="u-full-width">
+                                 <table id="lista-carrito" class="u-full-width">
                                     <thead>
-                                        <tr>
-                                            <th>Imagen</th>
-                                            <th>Nombre</th>
-                                            <th>Precio</th>
-                                            <th>Cantidad</th>
-                                            <th>total</th>
-                                            <th></th>
-                                        </tr>
                                     </thead>
-                                    <tbody></tbody>
-                                    
-                                </table>
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th>Cantidad</th>
+                                                <th>Total</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
 
                                     <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
                                     <li class="nav-item">
@@ -122,7 +122,12 @@ function cargarEvento(){
     console.log("Hola mundo")
     liProductos.addEventListener('click',agregarProductos);
     carrito.addEventListener('click',eliminarProducto);
-    vaciarCarritoBoton.addEventListener('click',vaciarProducto);
+    vaciarCarritoBoton.addEventListener("click",()=>{
+        console.log("boton");
+        articuloCarrito=[];
+        limpiarHTML();
+        limpiarHtmlTotal();
+    });
 }
 function agregarProductos(e){
     e.preventDefault();
@@ -133,10 +138,10 @@ function agregarProductos(e){
 }
 
 //vaciar carro
-function vaciarProducto(){
+/* function vaciarProducto(){
     articuloCarrito=[];
     limpiarHTML();
-}
+} */
 //eliminar producto individual del carrito
 function eliminarProducto(e){
     console.log(e.target.classList);
@@ -176,6 +181,7 @@ function leerDatos(productos){
                 producto.total = producto.cantidad * parseInt(producto.precio.substr(1,producto.precio.length));
                 return producto;
             }else{
+                limpiarHTML();
                 return producto;
             }
         })
@@ -197,7 +203,7 @@ function llenarCarritoHTML(){
     limpiarHtmlTotal();
     totalPedido = 0;
  articuloCarrito.forEach(producto =>{
-    const fila = document.createElement('tr');
+    const fila = document.createElement("tr");
     fila.innerHTML = `
     <td> <img src=${producto.imagen} width="90"></td>
     <td> ${producto.titulo} </td>
@@ -213,9 +219,9 @@ function llenarCarritoHTML(){
     filaTotal.innerHTML = `
     <td>Total Pedido: ${totalPedido} </td>
     `;
-    axios.post('https://databasejaa-default-rtdb.firebaseio.com/carro.json',producto)
+    /* axios.post('https://databasejaa-default-rtdb.firebaseio.com/carro.json',producto)
         .then(res=> console.log(res))
-        .catch(error=> console.log(error))
+        .catch(error=> console.log(error)) Esta parte deberia ir en Detalles del pedido*/
     contenedorCarrito.appendChild(fila);
     limpiarHtmlTotal();
     totalCarrito.appendChild(filaTotal);

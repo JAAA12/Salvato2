@@ -17,7 +17,6 @@
               <option :value="true">Cliente</option>
               <option :value="false">Administrador</option>
           </select>
-          <h1 v-if="key">Hola</h1>
       <div class="cliente" v-if="(key)">
         <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="nombre">
         <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
@@ -98,6 +97,7 @@
           console.log(this.key)
           this.$store.state.perfil=true,
           this.$store.state.mostrar=false,
+          this.$store.state.Nomostrar=true,
           console.log(this.$store.state.mostrar,"admi")
           
         }
@@ -106,6 +106,7 @@
           console.log(this.key)
           this.$store.state.perfil=false,
           this.$store.state.mostrar=true,
+          this.$store.state.Nomostrar=false,
           console.log(this.$store.state.mostrar,"admifalse")
           this.$forceUpdate();
         }
@@ -140,7 +141,7 @@
             if(this.usuarios.length >= 1)
             {
               alert("Usuario y contraseña correctos")
-              this.router.push("/")
+              this.router.push("/inicio")
               this.onchange()
             }
             else
@@ -179,7 +180,7 @@
           if(this.admis.length >= 1)
           {
             alert("Admi y contraseña correctos")
-            this.router.push("/")
+            this.router.push("/inicio") 
             this.onchange()
           }
           else

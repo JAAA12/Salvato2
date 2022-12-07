@@ -1,8 +1,8 @@
+import inicio from './pages/InicioSalvato'
 import login from './pages/LoginRegistro.vue'
 import registro from './pages/RegistroUsuario.vue'
 import Details from './pages/Details.vue'
 import contactanos from './pages/ContactanosSalvato'
-import inicio from './pages/InicioSalvato'
 import nosotros from './pages/NosotrosSalvato'
 import productos from './pages/ProductosSalvato'
 import recuperacion from './pages/RecuperarContra'
@@ -14,11 +14,11 @@ import registroProductos from './pages/RegistroProductos'
 
 
 export const routes = [
+    {path:'/inicio', component:inicio},
     {path:'/login', component:login},
     {path:'/registo', component:registro},
     {path:'/details/:index', component:Details},
     {path:'/contactanos', component:contactanos},
-    {path:'/', component:inicio},
     {path:'/productos', component:productos},
     {path:'/nosotros', component:nosotros},
     {path:'/recuperacion', component:recuperacion},

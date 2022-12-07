@@ -5,7 +5,7 @@
       <div class="enlaces">
       <ul class="nav">
         <li class="nav-item">
-          <router-link to="/inicio"  class="nav-link" active-class="active" 
+          <router-link to="/inicio" class="nav-link" active-class="active" 
             >Inicio</router-link
           >
         </li>
@@ -15,13 +15,13 @@
           >
         </li>
         <li class="nav-item">
-          <router-link to="/contactanos" class="nav-link" active-class="active"
+          <router-link to="/contactanos" v-if="Noverificar" class="nav-link" active-class="active"
             >Ubicación</router-link
           >
         </li>
 
         <li class="nav-item">
-          <router-link to="/nosotros" class="nav-link" active-class="active"
+          <router-link to="/nosotros" v-if="Noverificar" class="nav-link" active-class="active"
             >Nosotros</router-link
           >
         </li>
@@ -60,11 +60,15 @@ export default {
     return{
         valornumero:this.$store.state.perfil,
         mostrarN:this.$store.state.mostrar,
+        Nomostrar:this.$store.state.Nomostrar,
     }
   },
   computed: {
      verificar(){
       return this.$store.state.mostrar;
+    },
+    Noverificar(){
+      return this.$store.state.Nomostrar;
     }
   },
   mounted(){

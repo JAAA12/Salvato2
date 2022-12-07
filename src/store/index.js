@@ -5,6 +5,7 @@ export const store = createStore({
         personas:[{nombre:'Marcela Orrego', email:'marce@foto.com', aporte:'Cerveza'}],
         perfil: true,
         mostrar: false,
+        Nomostrar:true,
     },
     getters:{
         getPersonas:state => {
