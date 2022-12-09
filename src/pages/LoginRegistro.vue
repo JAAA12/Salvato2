@@ -141,7 +141,7 @@
             if(this.usuarios.length >= 1)
             {
               alert("Usuario y contraseña correctos")
-              this.router.push("/inicio")
+              this.router.push("/")
               this.onchange()
             }
             else
@@ -180,7 +180,7 @@
           if(this.admis.length >= 1)
           {
             alert("Admi y contraseña correctos")
-            this.router.push("/inicio") 
+            this.router.push("/") 
             this.onchange()
           }
           else

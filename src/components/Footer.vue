@@ -6,7 +6,7 @@
                   <div class="four columns">
                           <nav id="principal" class="menu">
                               <a class="enlace" href="#"><b>Nombre Empresa: </b><br> Pastelería Salvato<br></a>
-                              <a class="enlace" href="#"><b>Dirección: </b><br> Cra 35 #35-33 <br>Florida<br></a>
+                              <a class="enlace" href="#"><b>Dirección: </b><br> Cra 35 #35-10 <br>Bucaramanga<br></a>
                               
                               <a class="enlace" href="#"><b>Correo: </b><br> salvato@gmail.com<br></a>
                           </nav>
@@ -35,7 +35,7 @@
                     <nav id="secundaria" class="menu">
                         <a class="enlace" href="#"><b>Abierto:</b>
                           <br> Lunes a Sábado <br> 8am-6pm</a>
-                        <a class="enlace" href="#"><b>Lugares:</b> <br> Pedidos en area <br> 
+                        <a class="enlace" href="#"><b>Lugares:</b> <br> Pedidos en área <br> 
                            Metropolitana de Bucaramanga<br></a>
                     </nav>
             </div>

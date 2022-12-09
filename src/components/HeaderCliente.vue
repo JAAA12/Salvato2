@@ -5,7 +5,7 @@
       <div class="enlaces">
       <ul class="nav">
         <li class="nav-item">
-          <router-link to="/inicio" class="nav-link" active-class="active" 
+          <router-link to="/" class="nav-link" active-class="active" 
             >Inicio</router-link
           >
         </li>

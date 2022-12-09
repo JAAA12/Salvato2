@@ -1,5 +1,34 @@
 <template>
 <div id="recibo" src="js/jspdf.min.js">
+<div id="carro">
+                                    
+                                <table id="lista-carrito" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th>Cantidad</th>
+                                            <th>total</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody v-for="(carro, i) in producto" :key="i" >
+                                    <td> {{producto[0].titulo}} </td>
+                                    <td> {{producto.precio}} </td>
+                                    <td> {{producto.cantidad}} </td>
+                                    
+                                    <td> <a href= "#" class="borrar-curso" data-id="${producto.id}"/>X</td>
+                                    </tbody>
+                                    
+                                </table>
+
+                                    <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                                    <li class="nav-item">
+                                        <router-link to="/pantallaRecibo" class="nav-link" active-class="active" id="grecibo">
+                                            Generar Recibo
+                                        </router-link>
+                                      </li>
+                            </div>
     <h1>Detalles Del Pedido</h1>
     <div class="form-group">
         <label for="formInput">Nombre</label>
@@ -60,7 +89,7 @@
 import jsPDF from 'jspdf'
 import {ref} from 'vue' //ref crea un objeto
 import {useStore} from 'vuex'
-import {useRouter} from 'vue-router'
+import {useRoute} from 'vue-router'
 import axios from 'axios'
 
 export default{
@@ -70,7 +99,7 @@ export default{
    
 setup(){
     const store = useStore()
-    const router = useRouter()
+    const route = useRoute()
     const hora = ref("")
     const fecha = ref("")
     const entrega = ref("")
@@ -78,7 +107,8 @@ setup(){
     const nombrePedido = ref("")
     const telefono = ref("")
     const datos = []
-    const hhh = "funciona"
+    const producto = ref([])
+    
     
     function generaRecibo(){
       if(hora.value != '' && fecha.value != ""){
@@ -95,9 +125,6 @@ setup(){
         axios.post('https://databasejaa-default-rtdb.firebaseio.com/recibo.json',recibo)
         .then(res=> console.log(res))
         .catch(error=> console.log(error))
-
-
-       
 
       }else{
         alert('Ingrese todos los datos')
@@ -120,20 +147,12 @@ setup(){
               fecha: fecha.value,
               entrega: entrega.value,
               pago: pago.value
-
-              
-
-            })
-        
-
-            
+            })        
         }
         console.log("hola mundo",datos[0]) 
             datos.splice(1);
 
             logo.src = '../assets/Logosalvato.png'
-
-            
 
             pdf.text(10,10, 'Nombre del Cliente: ' + [datos[0].nombrePedido] + '\n' +
             'Teléfono: ' + [datos[0].telefono] + '\n' +
@@ -150,19 +169,38 @@ setup(){
             pdf.save('Prueba.pdf');
     
                 console.log("datos",datos.nombrePedido.value)
-                console.log(recibo)
-        
+                console.log(recibo)    
       })
-    }
-
+    }  
     
+    
+    axios.get('https://databasejaa-default-rtdb.firebaseio.com/carro.json')
+    .then(res=>{
+      console.log(res)
+      for(const id in res.data){
+        producto.value.push({
+          id: res.data.id,
+          titulo: res.data.titulo
+         
+        })
+        console.log(producto.value)
+      }
+    })
+    .catch(error=> console.log(error))
+    
+   
 
-    return{hora, fecha,entrega,pago, telefono,nombrePedido,generaRecibo} 
-}
+    return{hora, fecha,entrega,pago, telefono,nombrePedido,generaRecibo, producto} 
+},
+
+ 
     
 }
 </script>
 
 <style>
+li{
+  list-style: none;
+}
 
-</style>
+</style> 

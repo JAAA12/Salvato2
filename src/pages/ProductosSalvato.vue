@@ -96,10 +96,12 @@ export default {
     })
     .catch(error=> console.log(error))
     
+    
     return {productosVector };
        
    
     },
+   
 
 
     /* function agregarProducto(){
@@ -113,6 +115,7 @@ export default {
     const totalCarrito = document.querySelector('#lista-carrito thead');
     const vaciarCarritoBoton = document.querySelector('#vaciar-carrito');
     const liProductos = document.querySelector('#lista-cursos');
+    const grecibo = document.querySelector('#grecibo')
 console.log(totalCarrito);
 let articuloCarrito = [];
 let totalPedido = 0;
@@ -122,12 +125,14 @@ function cargarEvento(){
     console.log("Hola mundo")
     liProductos.addEventListener('click',agregarProductos);
     carrito.addEventListener('click',eliminarProducto);
+    grecibo.addEventListener('click', agregarAlRecibo)
     vaciarCarritoBoton.addEventListener("click",()=>{
         console.log("boton");
         articuloCarrito=[];
         limpiarHTML();
         limpiarHtmlTotal();
     });
+    
 }
 function agregarProductos(e){
     e.preventDefault();
@@ -187,12 +192,13 @@ function leerDatos(productos){
         })
     }else{
         articuloCarrito = [...articuloCarrito,infoProductos];
-    }
+    } 
 
     //agregamos al vector
    
     console.log("vector",articuloCarrito);
     llenarCarritoHTML();
+    
 }
 
 
@@ -219,9 +225,7 @@ function llenarCarritoHTML(){
     filaTotal.innerHTML = `
     <td>Total Pedido: ${totalPedido} </td>
     `;
-    /* axios.post('https://databasejaa-default-rtdb.firebaseio.com/carro.json',producto)
-        .then(res=> console.log(res))
-        .catch(error=> console.log(error)) Esta parte deberia ir en Detalles del pedido*/
+    /* Esta parte deberia ir en Detalles del pedido */
     contenedorCarrito.appendChild(fila);
     limpiarHtmlTotal();
     totalCarrito.appendChild(filaTotal);
@@ -236,6 +240,12 @@ function limpiarHTML(){
 function limpiarHtmlTotal(){
     totalCarrito.innerHTML = "";
 };
+
+function agregarAlRecibo(){
+    axios.post('https://databasejaa-default-rtdb.firebaseio.com/carro.json',articuloCarrito)
+        .then(res=> console.log(res))
+        .catch(error=> console.log(error))
+}
 
  },
  
