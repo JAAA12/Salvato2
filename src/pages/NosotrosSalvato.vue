@@ -1,6 +1,6 @@
 <template>
   <div class='about'>
-    <h1 class="h1-nos">Nosotros</h1>
+    <h1 class="h1-nos"><b>Nosotros</b></h1>
 
     <h2 class="h-nos">¿POR QUÉ NACE SALVATO?</h2>
     <div class='nosotros'>
@@ -77,7 +77,7 @@ body{
 }
 h1{
   font-family: 'Times New Roman', Times, serif;
-  color: rgb(133, 7, 7);
+  color: rgb(83, 32, 1);
 }
 p{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

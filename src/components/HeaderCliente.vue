@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-light nav-pills" style="background-color:  rgb(133, 7, 7)">
+  <nav class="navbar navbar-light nav-pills" style="background-color:  rgb(204, 112, 37)">
     <div class="container">
         <img src="../assets/Logosalvato.png" class="logosalvato">
       <div class="enlaces">
@@ -91,7 +91,7 @@ export default {
 }
 .nav-pills .nav-link.active,
 .show>.nav-pills .nav-link{
-    background: #b53131;
+    background: 	#BD5724;
     text-decoration:none;
 }
 .nav-link:hover{

@@ -12,20 +12,20 @@
 
         <div class="barra">
             <div class="iconopan">
-                <p>Panes <br>
+                <p style="color:white; font-family:'Times New Roman', Times, serif ; font-size:15px">Panes <br>
                 Deliciosos y frescos</p>
             </div>
             <div class="iconotorta">
-                <p>Tortas <br>Suaves y saludables</p>
+                <p style="color:white; font-family:'Times New Roman', Times, serif ; font-size:15px">Tortas <br>Suaves y saludables</p>
             </div>
             <div class="iconopostre">
-                <p>Postres <br>
+                <p style="color:white; font-family:'Times New Roman', Times, serif ; font-size:15px">Postres <br>
                 Únicos y llenos de sabor </p>
             </div>
         </div>
 
     <div id="lista-pro" class="container">
-        <h1 id="titulo2" class="titulo2">"Se requiere una alimentación saludable para tener una salud envidiable"</h1>
+        <h1 id="titulo2" class="titulo2"><b>"Se requiere una alimentación saludable para tener una salud envidiable"</b></h1>
         <h2>Productos</h2>
         <div class="row1">
                     <div class="four columns">
@@ -152,10 +152,10 @@ ul{
 }
 /*barra*/
 .barra{
-    background: #f18d22; /* Old browsers */
-    background: -moz-linear-gradient(left, #f18d22 0%,#f18d22 50%, #ecab0f 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #f18d22 0%,#f18d22 50%,#ecab0f 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #f18d22 0%,#f18d22 100%,#ecab0f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: #d49815; /* Old browsers */
+    background: -moz-linear-gradient(left, #f4b011 0%,#DB200F 50%, #BD2900 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #f4b011 0%,#DB200F 50%,#BD2900 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #f4b011 0%,#DB200F 100%,#BD2900 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b57c00', endColorstr='#e44e52',GradientType=1 ); /* IE6-9 */
     display: flex;
     width:1920px;
@@ -164,11 +164,12 @@ ul{
 .iconopan{
     background-image:url(../assets/pancito.png);
     background-repeat: no-repeat;
+    background-position: left;
     background-size: 35px 35px;
-    background-position: center;
-    padding: 10px 40px 10px 250px;
+    margin: 10px 40px 10px 150px;
+    margin-top: 30px;
+    margin-left: 100px;
     text-align: center;
-    margin-left: 250px;
 }
 
 .iconotorta{
@@ -176,7 +177,8 @@ ul{
     background-repeat: no-repeat;
     background-position: left;
     background-size: 48px 48px;
-    margin: 10px 40px 10px 100px;
+    margin: 10px 40px 10px 150px;
+    margin-top: 30px;
     padding-left: 50px;
     text-align: center;
 }
@@ -184,9 +186,10 @@ ul{
     background-image:url(../assets/postre2.png);
     background-repeat: no-repeat;
     background-position: left;
-    padding-left: 50px;
     background-size: 35px 35px;
-    margin: 10px 50px 10px 150px;
+    margin: 10px 40px 10px 150px;
+    margin-top: 30px;
+    padding-left: 50px;
     text-align: center;
 }
  /*carrito*/

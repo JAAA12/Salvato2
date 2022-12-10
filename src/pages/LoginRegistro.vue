@@ -26,7 +26,7 @@
         <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="passwordAdmi">
       </div>
   <!--       <input type="validar" id="validar" class="fadeIn third" name="login" placeholder="Validar" v-model="password">
-   -->      <button class="btn ingresar" @click="buscarUsuario">
+   -->      <button class="btnIngresar" @click="buscarUsuario">
             Ingresar
           </button>
       </form>
@@ -36,8 +36,6 @@
       <p class="registro">¿No tienes cuenta? <router-link to="/registro" id="link" class="nav-link" active-class="active"
               ><b>Registrarse</b></router-link
             ></p>
-        <router-link to="/recuperacion" id="link" class="nav-link" active-class="active"
-              ><b>Recuperar contraseña</b></router-link>
       </div>
   
     </div>
@@ -222,6 +220,25 @@
   
   
   <style>
+  .btnIngresar{
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 5px;
+    margin-top: 30px;
+    height: 35px;
+    width: 250px;
+    text-align: center;
+    border: 1px solid #8f4007;
+    font-size: 18px;
+    background-color: #8f4007;
+    border-radius: 4px;
+  border: 1px solid #ffffff;
+  }
+  .btnIngresar:hover{
+    background-color: #e79600;
+    color:black;
+    text-decoration:none;
+}
   .logoImg{
     margin:20px;
   }
@@ -236,7 +253,7 @@
     color: black;
   }
   #link:hover{
-    color :rgb(151, 29, 29);
+    color :rgb(152, 82, 25);
     }
   #perfil{
      background-color: #f6f6f6;

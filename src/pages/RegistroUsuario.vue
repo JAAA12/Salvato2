@@ -120,7 +120,7 @@ export default {
 
 <style>
 .btn{
-  background-color: #b53131;
+  background-color: #914f12;
   color: black;
   margin-right: 20px;
 }

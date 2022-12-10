@@ -29,7 +29,7 @@
                                         <router-link to="/pantallaRecibo" class="nav-link" active-class="active" id="grecibo">
                                             Generar Recibo
                                         </router-link>
-                                      </li>
+                                    </li>
                             </div>
                     </li>
                 </ul>
@@ -47,26 +47,23 @@
         </div>
    </div>
  <div id="lista-cursos" class="container">
-        <h1 id="titulo1" class="titulo1">Nuestros Productos</h1>
+        <h1 id="titulo1" class="titulo1"><b>Nuestros Productos</b></h1>
         <h2>SALVATOS</h2>
          
         <div class="row" v-for="(productos, i) in productosVector" :key="i">
-                    <div class="four columns">
-                            <div class="card" id="salvatos">
-                                <img src="../assets/salvato_clasico.jpg" class="imagen-curso u-full-width">
-                                <div class="info-card">
-                                    <h4 >{{productos.nombreProducto}}</h4>
-                                    <p >{{productos.descripcion}}
-                                    </p>
-                                    <img src="../assets/estrellas.png">
-                                    <p  class="precio">Regular<span class="u-pull-right ">${{productos.precio}}</span></p>
-                                    <a @click="carrito" ref="agregar" href="#" class="u-full-width button-primary button input agregar-carrito"  :data-id=productos.id>Agregar Al Carrito</a>
-                                </div>
-                            </div>
+            <div class="four columns">
+                <div class="card" id="salvatos">
+                    <img src="../assets/salvato_clasico.jpg" class="imagen-curso u-full-width">
+                    <div class="info-card">
+                        <h4 ><b>{{productos.nombreProducto}}</b></h4>
+                        <p >{{productos.descripcion}}</p>
+                        <p  class="precio"><span >${{productos.precio}}</span></p>
+                        <a @click="carrito" ref="agregar" href="#" class="u-full-width button-primary button input agregar-carrito"  :data-id=productos.id>Agregar Al Carrito</a>
                     </div>
-                   
+                </div>
+            </div>
         </div>
-        </div>
+    </div>
 </div>
 
 </template>
@@ -78,6 +75,9 @@
 import axios from 'axios'
 import {ref} from 'vue'
 export default {
+    data: () => ({
+      rating: 4,
+    }),
   setup(){
     const productosVector = ref([])
     
@@ -101,8 +101,6 @@ export default {
        
    
     },
-   
-
 
     /* function agregarProducto(){
        const articuloCarrito = []
@@ -258,6 +256,10 @@ function agregarAlRecibo(){
 
 <!-- arriba, derecha, abajo, izquierda -->
 <style>
+#img-carrito{
+    margin-top: 18px;
+    margin-left: 900px;
+}
 .cuerpo{
     margin: 0;
     height: 100%;
@@ -267,20 +269,22 @@ function agregarAlRecibo(){
 .encabezado{
     display: flex;
     width: 100%;
-    background: #f18d22;
+    height: 100px;
+    background: #8f4007;
     padding:0;
     
 }
 .imglogo{
-width: 66.6px;
-height: 66.6px;
+    margin-top: 25px;
+width: 50px;
+height: 50px;
 margin-left: 80px;
 }
 /*store*/
 
 .store{
     text-align: center;
-    background: #8f0c07;
+    background: #8f3b07;
 }
 .store h1{
     color: black;
@@ -306,7 +310,7 @@ margin-left: 80px;
   
 .submenu #carro{
     display: none;
-    margin-right:-190px;
+    margin-right:90px;
 }
 
 .submenu:hover #carro{
@@ -366,9 +370,17 @@ td:last-child {
 #grecibo{
     margin: 5px;
     text-align: center;
-    border: 1px solid #8f0c07;
-    background-color: #8f0c07;
+    border: 1px solid #8f4007;
+    font-size: 18px;
+    background-color: #8f4007;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
     
+}
+#grecibo:hover{
+    background-color: #e79600;
+    color:black;
+    text-decoration:none;
 }
 
 a{
@@ -397,28 +409,31 @@ h2{
     height:300px;
 }
 
-.info-card img{
-    width: 82px;
-    height:13px;
-    font-family: 'Georgia';
+.info-card  {
+    padding: 10px 20px;
 }
-.info-card{
-    background: white;
-    padding: 10px 20px 10px 20px;
-    width: 300px;
-    height: 260px;
-    font-size: 16px;
-}
-.info-card h4{
+
+.info-card p, 
+.card h4 {
     margin-bottom: 5px;
-    font-size:20px;
 }
+.info-card .precio {
+    font-size: 18px;
+    margin-top: 10px;
+    font-family: "time";
+}
+.info-card .precio span {
+    font-weight: 700px;
+    font-size: 22px;
+    font-family: "time";
+}
+
 .precio{
-    margin: 10px 0 5px 0;
+    margin: 60px 20px 40px 20px;
     font-size: 20px;
 }
 .precio span{
-  margin-left: 105px;
+  margin-left: 5px;
  
   font-weight: bold;
 }
@@ -426,27 +441,36 @@ h2{
 .button{
     /*margin: 10px 0 10px 20px;
     padding: 0 30px 0 30px;*/
+    margin-bottom: 90px;
     display: inline-block;
     text-decoration: none;
-  height: 38px;
-     color: white;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 38px;
-  letter-spacing: .1rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid #8f0c07;
-  cursor: pointer;
-  box-sizing: border-box;
-  background-color: #8f0c07;
+    height: 38px;
+    width: 100px;
+    color: white;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600px;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #8f4007;
+}
+.button:hover{
+    background-color: #e79600;
+    color:black;
+    text-decoration:none;
 }
 .card{
     margin: 20px;
+    width: 302px;
+    height: 550px;
     border: 1px solid black
 }
 .row{
@@ -510,6 +534,7 @@ h2{
    margin: 0 175px;
    font-size: 2.5rem;
    text-align: center;
+   font-family: 'Times New Roman', Times, serif;
 }
 
 /*Columnas*/

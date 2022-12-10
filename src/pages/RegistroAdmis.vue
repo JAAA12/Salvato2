@@ -78,7 +78,7 @@ export default {
 
 <style>
 .btn{
-  background-color: #b53131;
+  background-color: #923a17;
   color: black;
   margin-right: 20px;
 }

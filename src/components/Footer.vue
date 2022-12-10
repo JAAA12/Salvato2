@@ -48,8 +48,8 @@
 <style>
 
 .footer {
-  background-color:rgb(113, 13, 13);
-  border-top: rgb(113, 13, 13);/*utilizan para establecer de forma abreviada el valor de una o más propiedades individuales.*/
+  background-color:	#B05F1C;
+  border-top: 	#B05F1C;/*utilizan para establecer de forma abreviada el valor de una o más propiedades individuales.*/
   padding-top: 3rem;/*establece el espacio de relleno requerido en la parte superior del elemento*/
   bottom:-100%;/*especifica parte de la posición de un elemento (posicionado - es decir, con una posición determinada por código).*/
   width: 100%;/*especifica la anchura del area de contenido de un elemento.*/
