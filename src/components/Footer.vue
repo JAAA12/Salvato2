@@ -2,7 +2,7 @@
   <div>
     <footer id="footer" class="footer">
       <div class="container">
-          <div class="row">
+          <div class="colu">
                   <div class="four columns">
                           <nav id="principal" class="menu">
                               <a class="enlace" href="#"><b>Nombre Empresa: </b><br> Pastelería Salvato<br></a>
@@ -48,8 +48,8 @@
 <style>
 
 .footer {
-  background-color:	#B05F1C;
-  border-top: 	#B05F1C;/*utilizan para establecer de forma abreviada el valor de una o más propiedades individuales.*/
+  background-color:	rgb(204, 112, 37);
+  border-top: 	rgb(204, 112, 37);/*utilizan para establecer de forma abreviada el valor de una o más propiedades individuales.*/
   padding-top: 3rem;/*establece el espacio de relleno requerido en la parte superior del elemento*/
   bottom:-100%;/*especifica parte de la posición de un elemento (posicionado - es decir, con una posición determinada por código).*/
   width: 100%;/*especifica la anchura del area de contenido de un elemento.*/
@@ -131,7 +131,7 @@ nav
   display: block;
 }
 
-.row {
+.colu {
   display: flex;
   margin: 20px 20px 0px 100px;
 }

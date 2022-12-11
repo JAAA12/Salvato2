@@ -2,7 +2,7 @@
   <div>
     <h3>Registro nuevos productos</h3>
 
-    <div class="card" style="width: 35rem">
+    <div id="cuadro2" class="card">
       <div class="card-body">
         <h5 class="card-title">Información Productos</h5>
 
@@ -33,10 +33,10 @@
             placeholder="Descripción del producto"
           />
         </div>
-        <button class="btn" @click="addProducto">
+        <button style="color:white" class="btn" @click="addProducto">
           Actualizar
         </button>
-        <router-link to="/login" class="btn" active-class="active"
+        <router-link to="/login" style="color:white" class="btn" active-class="active"
             >Volver</router-link>
       </div>
     </div>
@@ -132,11 +132,23 @@ export default {
 
 <style>
 .btn{
-  background-color: #904212;
-  color: black;
+  background-color: #923a17;
   margin-right: 20px;
+  margin:5px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.btn:hover{
+  background-color: #e7a429;
 }
 h3{
   margin-left: 30px;
+}
+.card-body{
+  width: 600px;
+  height: 400px;
+}
+#cuadro2{
+  width: 600px;
+  height: 400px;
 }
 </style>

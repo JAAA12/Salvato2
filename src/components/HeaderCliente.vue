@@ -5,44 +5,44 @@
       <div class="enlaces">
       <ul class="nav">
         <li class="nav-item">
-          <router-link to="/" class="nav-link" active-class="active" 
+          <router-link to="/" id="navegar" class="nav-link" active-class="active" 
             >Inicio</router-link
           >
         </li>
         <li class="nav-item">
-          <router-link to="/productos" class="nav-link" active-class="active"
+          <router-link to="/productos" id="navegar" class="nav-link" active-class="active"
             >Productos</router-link
           >
         </li>
         <li class="nav-item">
-          <router-link to="/contactanos" v-if="Noverificar" class="nav-link" active-class="active"
+          <router-link to="/contactanos" id="navegar" v-if="Noverificar" class="nav-link" active-class="active"
             >Ubicación</router-link
           >
         </li>
 
         <li class="nav-item">
-          <router-link to="/nosotros" v-if="Noverificar" class="nav-link" active-class="active"
+          <router-link to="/nosotros" id="navegar" v-if="Noverificar" class="nav-link" active-class="active"
             >Nosotros</router-link
           >
         </li>
          
          <li class="nav-item">
-          <router-link to="/registroAdmis" v-if="verificar" class="nav-link" active-class="active"
+          <router-link to="/registroAdmis" id="navegar" v-if="verificar" class="nav-link" active-class="active"
             >Registro Administrador</router-link
           >
         </li>
          <li class="nav-item">
-          <router-link to="/pagos" v-if="verificar" class="nav-link" active-class="active"
+          <router-link to="/pagos"  id="navegar" v-if="verificar" class="nav-link" active-class="active"
             >Pagos</router-link
           >
         </li>  
         <li class="nav-item">
-          <router-link to="/registroProductos" v-if="verificar" class="nav-link" active-class="active"
+          <router-link to="/registroProductos" id="navegar" v-if="verificar" class="nav-link" active-class="active"
             >Registrar Productos</router-link
           >
         </li> 
         <li class="nav-item">
-          <router-link to="/login" class="nav-link" active-class="active"
+          <router-link to="/login" id="navegar" class="nav-link" active-class="active"
             ><img src="../assets/logoinicio.webp" class="logoinicio"></router-link
           > 
           </li>
@@ -82,20 +82,36 @@ export default {
 
 
 <style>
+.navbar {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+}
 .container{
-  margin:20px;
+  margin-bottom:10px;
+  margin-top:10px;
+  width: 1343px;
 }
 .nav-link{
   color:white;
-  font-family: 'Times';
+  font-family: Muli,HelveticaNeue,Helvetica Neue,sans-serif;
+  font-size: 18px;
 }
-.nav-pills .nav-link.active,
-.show>.nav-pills .nav-link{
+.nav-pills #navegar.active,
+.show>.nav-pills #navegar{
     background: 	#BD5724;
     text-decoration:none;
 }
-.nav-link:hover{
-color :rgb(16, 14, 14);
+#navegar:hover{
+  background: 	#bd572498;
+  color:aliceblue;
 }
 .logosalvato{
   width: 60px;
@@ -104,5 +120,26 @@ color :rgb(16, 14, 14);
 .logoinicio{
   width: 30px;
   height:30px;
+}
+/* Diseño para celulares */
+#columna1, #columna2, #columna3 {
+	float:none;
+	width:100%;
+}
+
+/* Diseño para tabletas */ 
+@media screen and (min-width: 800px) {
+	#columna1, #columna2 {
+		float:left;
+		width:50%;
+	}
+}
+
+/* Diseño para PC */ 
+@media screen and (min-width: 1025px) {
+	#columna1, #columna2, #columna3 {
+	float:left;
+	width:33%;
+}
 }
 </style>

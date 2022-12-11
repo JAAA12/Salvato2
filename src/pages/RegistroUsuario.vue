@@ -2,7 +2,7 @@
   <div>
     <h3>Registro</h3>
 
-    <div class="card" style="width: 35rem">
+    <div id="cuadro3" class="card">
       <div class="card-body">
         <h5 class="card-title">Datos Cliente</h5>
 
@@ -33,10 +33,10 @@
             placeholder="Contraseña"
           />
         </div>
-        <button class="btn" @click="addPersona">
+        <button style="color:white" class="btn" @click="addPersona">
           Registrarse
         </button>
-        <router-link to="/login" class="btn" active-class="active"
+        <router-link to="/login" style="color:white" class="btn" active-class="active"
             >Volver</router-link>
       </div>
     </div>
@@ -120,11 +120,24 @@ export default {
 
 <style>
 .btn{
-  background-color: #914f12;
-  color: black;
+  background-color: #923a17;
+  color: white;
+  margin:5px;
   margin-right: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.btn:hover{
+  background-color: #e7a429;
 }
 h3{
   margin-left: 30px;
+}
+.card-body{
+  width: 600px;
+  height: 400px;
+}
+#cuadro3{
+  width: 600px;
+  height: 400px;
 }
 </style>

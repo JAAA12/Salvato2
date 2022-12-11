@@ -24,7 +24,7 @@
                                         <tbody></tbody>
                                     </table>
 
-                                    <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                                    <a href="#" id="vaciar-carrito" class="button u-full-width"><b>Vaciar Carrito</b></a>
                                     <li class="nav-item">
                                         <router-link to="/pantallaRecibo" class="nav-link" active-class="active" id="grecibo">
                                             Generar Recibo
@@ -46,23 +46,26 @@
             </ul> 
         </div>
    </div>
- <div id="lista-cursos" class="container">
+ <div id="lista-cursos" class="bod">
         <h1 id="titulo1" class="titulo1"><b>Nuestros Productos</b></h1>
         <h2>SALVATOS</h2>
-         
-        <div class="row" v-for="(productos, i) in productosVector" :key="i">
-            <div class="four columns">
-                <div class="card" id="salvatos">
-                    <img src="../assets/salvato_clasico.jpg" class="imagen-curso u-full-width">
-                    <div class="info-card">
-                        <h4 ><b>{{productos.nombreProducto}}</b></h4>
-                        <p >{{productos.descripcion}}</p>
-                        <p  class="precio"><span >${{productos.precio}}</span></p>
-                        <a @click="carrito" ref="agregar" href="#" class="u-full-width button-primary button input agregar-carrito"  :data-id=productos.id>Agregar Al Carrito</a>
+        <ul> 
+            <li>
+                <div class="row" v-for="(productos, i) in productosVector" :key="i">
+                    <div class="four columns">
+                        <div class="card" id="salvatos">
+                            <img src="../assets/salvato_clasico.jpg" class="imagen-curso u-full-width">
+                            <div class="info-card">
+                                <h4 ><b>{{productos.nombreProducto}}</b></h4>
+                                <p >{{productos.descripcion}}</p>
+                                <p  class="precio"><span >${{productos.precio}}</span></p>
+                                <a @click="carrito" ref="agregar" href="#" class="u-full-width button-primary button input agregar-carrito"  :data-id=productos.id><b>Agregar Al Carrito</b></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </li>
+        </ul>   
     </div>
 </div>
 
@@ -256,22 +259,33 @@ function agregarAlRecibo(){
 
 <!-- arriba, derecha, abajo, izquierda -->
 <style>
+.bod ul li{
+    display:flex;
+    margin:0;
+    padding: 0px;
+}
+body {
+    margin: 0px;
+}
 #img-carrito{
     margin-top: 18px;
     margin-left: 900px;
 }
 .cuerpo{
-    margin: 0;
-    height: 100%;
-    width: 100%;
+    margin: 0px;
+    height:1500px;
+    width: 1343px;
     font-family: georgia;
+
 }
 .encabezado{
     display: flex;
+    margin-bottom:0px;
+    margin-top:0px;
     width: 100%;
     height: 100px;
     background: #8f4007;
-    padding:0;
+    padding:0px;
     
 }
 .imglogo{
@@ -336,8 +350,8 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 0; }
-.container:after,
-.row:after,
+/*.container:after,*/
+/*.row:after,*/
 .u-cf {
     content: "";
     display: table;
@@ -368,6 +382,7 @@ td:last-child {
     
 /*hasta acá*/
 #grecibo{
+    font-family: 'Times New Roman', Times, serif;
     margin: 5px;
     text-align: center;
     border: 1px solid #8f4007;
@@ -390,19 +405,27 @@ a{
 
 h2{
    width: 1000px;
-   height: 43.75px;
-   margin: 0 423px;
+   height: 60px;
+   margin-left: 200px;
+  margin-right: 200px;
    font-size: 2.5rem;
+   text-align: center;
+   font-family: 'Times New Roman', Times, serif;
 }
 .titulo1{
-  font-size: 3rem;
-  margin: 30px 450px;
+  font-size: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
   width:1000px;
+  height: 100px;
 }
-.container{
-    width: 1343px;
-    margin: 0;
-    padding: 0;
+.bod{
+   margin-left: 1px;
+   margin-right: 1px;
+   margin-top: 20px;
+   margin-bottom: 40px;
+   width: 1343px;
+   height: 1343px;
 }
 .card img{
     width:300px;
@@ -441,7 +464,7 @@ h2{
 .button{
     /*margin: 10px 0 10px 20px;
     padding: 0 30px 0 30px;*/
-    margin-bottom: 90px;
+    font-family: 'Times New Roman', Times, serif;
     display: inline-block;
     text-decoration: none;
     height: 38px;
@@ -449,7 +472,7 @@ h2{
     color: white;
     text-align: center;
     font-size: 11px;
-    font-weight: 600px;
+    font-weight: 60px;
     line-height: 38px;
     letter-spacing: .1rem;
     text-transform: uppercase;
@@ -473,10 +496,7 @@ h2{
     height: 550px;
     border: 1px solid black
 }
-.row{
-   display: flex;
-   margin: 20px 118px 20px 410px;
-}
+
 /*carrusel*/ 
 
  .carrusel{
@@ -488,7 +508,7 @@ h2{
 
 .carrusel ul{
     display: flex;
-    width: 4000cm;
+    width: 9000px;
     animation: cambio 15s infinite;  
     padding: 0
 }
@@ -515,7 +535,7 @@ h2{
 
 @media (min-width: 1343px){
     .encabezado{
-    width: 1920px;
+    width: 1343px;
 }
 .carrusel{
     width: 1343px;
@@ -523,18 +543,6 @@ h2{
  .carrusel img{
     width: 1343px;
     height: 543px;   
-}
-.row{
-   display: flex;
-   margin: 20px 118px 20px 170px;
-}
-h2{
-   width: 1600px;
-   height: 43.75px;
-   margin: 0 175px;
-   font-size: 2.5rem;
-   text-align: center;
-   font-family: 'Times New Roman', Times, serif;
 }
 
 /*Columnas*/
@@ -550,7 +558,10 @@ h2{
 .u-pull-left {
   float: left; }
 }
-
+.row {
+    display: flex;
+    margin: 0px;
+}
 </style>
 <!-- git init
 git add .

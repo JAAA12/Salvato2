@@ -47,6 +47,7 @@ body{
 }
 .about{
   font-family:georgia;
+  width: 1343px;
 }
 .nosotros{
     align-content: center;
@@ -58,7 +59,8 @@ body{
   margin-top: 50px;
 }
 .h-nos{
-  margin: 50px 0 0 440px;
+  margin: 20px;
+  width: 1300px;
   font-size: 30px;
 }
 .img-nosotros{

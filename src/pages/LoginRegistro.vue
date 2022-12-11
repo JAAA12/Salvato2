@@ -33,7 +33,7 @@
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
-      <p class="registro">¿No tienes cuenta? <router-link to="/registro" id="link" class="nav-link" active-class="active"
+      <p class="registro">¿No tienes cuenta? <router-link to="/registro" id="enla" class="nav-link" active-class="active"
               ><b>Registrarse</b></router-link
             ></p>
       </div>
@@ -220,6 +220,7 @@
   
   
   <style>
+ 
   .btnIngresar{
     color:white;
     font-family: 'Times New Roman', Times, serif;
@@ -249,12 +250,16 @@
     margin-bottom:5px;
     
   }
-  #link{
-    color: black;
+  #enla{
+    color:rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
   }
-  #link:hover{
-    color :rgb(152, 82, 25);
-    }
+  #enla:hover{
+    color:rgb(163, 93, 14);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+  }
   #perfil{
      background-color: #f6f6f6;
     border: none;
