@@ -24,6 +24,7 @@
   margin-top: 50px;
 }
 .parrafo{
+  margin-left:50px;
   font-size:30px;
   text-align:center;
   margin-top:20px;
@@ -35,5 +36,6 @@
 }
 iframe{
   margin: 30px 0 0 200px;
+  margin-left:325px;
 }
 </style>

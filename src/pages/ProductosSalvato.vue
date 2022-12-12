@@ -27,7 +27,7 @@
                                     <a href="#" id="vaciar-carrito" class="button u-full-width"><b>Vaciar Carrito</b></a>
                                     <li class="nav-item">
                                         <router-link to="/pantallaRecibo" class="nav-link" active-class="active" id="grecibo">
-                                            Generar Recibo
+                                           <b> Generar Recibo</b>
                                         </router-link>
                                     </li>
                             </div>
@@ -45,10 +45,10 @@
                 <li><img src="../assets/diapo1.png" alt="No cargó"></li>
             </ul> 
         </div>
+        <h1 id="titulo1" class="titulo1"><b>Nuestros Productos</b></h1>
+        <h2 id="titulo2">SALVATOS</h2>
    </div>
  <div id="lista-cursos" class="bod">
-        <h1 id="titulo1" class="titulo1"><b>Nuestros Productos</b></h1>
-        <h2>SALVATOS</h2>
         <ul> 
             <li>
                 <div class="row" v-for="(productos, i) in productosVector" :key="i">
@@ -259,9 +259,13 @@ function agregarAlRecibo(){
 
 <!-- arriba, derecha, abajo, izquierda -->
 <style>
+#titulo2{
+    margin-bottom: 40px;
+}
 .bod ul li{
     display:flex;
-    margin:0;
+    margin:0px;
+    margin-left: 90px;
     padding: 0px;
 }
 body {
@@ -273,7 +277,7 @@ body {
 }
 .cuerpo{
     margin: 0px;
-    height:1500px;
+    height:auto;
     width: 1343px;
     font-family: georgia;
 
@@ -381,22 +385,7 @@ td:last-child {
     }
     
 /*hasta acá*/
-#grecibo{
-    font-family: 'Times New Roman', Times, serif;
-    margin: 5px;
-    text-align: center;
-    border: 1px solid #8f4007;
-    font-size: 18px;
-    background-color: #8f4007;
-    border-radius: 4px;
-    border: 1px solid #ffffff;
-    
-}
-#grecibo:hover{
-    background-color: #e79600;
-    color:black;
-    text-decoration:none;
-}
+
 
 a{
     text-decoration: none;
@@ -406,7 +395,7 @@ a{
 h2{
    width: 1000px;
    height: 60px;
-   margin-left: 200px;
+   margin-left: 109px;
   margin-right: 200px;
    font-size: 2.5rem;
    text-align: center;
@@ -414,7 +403,8 @@ h2{
 }
 .titulo1{
   font-size: 50px;
-  margin-left: 20px;
+  margin-top: 80px;
+  margin-left: 100px;
   margin-right: 20px;
   width:1000px;
   height: 100px;
@@ -424,8 +414,9 @@ h2{
    margin-right: 1px;
    margin-top: 20px;
    margin-bottom: 40px;
-   width: 1343px;
-   height: 1343px;
+   /*width: 1343px;
+   height: 1343px;*/
+   display: flex;
 }
 .card img{
     width:300px;
@@ -464,11 +455,11 @@ h2{
 .button{
     /*margin: 10px 0 10px 20px;
     padding: 0 30px 0 30px;*/
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times';
     display: inline-block;
     text-decoration: none;
     height: 38px;
-    width: 100px;
+    width: auto;
     color: white;
     text-align: center;
     font-size: 11px;
@@ -497,52 +488,33 @@ h2{
     border: 1px solid black
 }
 
-/*carrusel*/ 
-
- .carrusel{
-    width: 100%;
- }
-.carrusel-img{
-    overflow: hidden;
+#grecibo{
+    font-family: 'Times';
+    display: inline-block;
+    text-decoration: none;
+    height: 38px;
+    width: auto;
+    color: white;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 60px;
+    line-height: 18px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #8f4007;
+    
 }
-
-.carrusel ul{
-    display: flex;
-    width: 9000px;
-    animation: cambio 15s infinite;  
-    padding: 0
-}
-
-.carrusel img{
-    max-width: 100%;
-    height: 800px;   
-}
-
-
-@keyframes cambio{
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
-
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
-}
-
-@media (min-width: 1343px){
-    .encabezado{
-    width: 1343px;
-}
-.carrusel{
-    width: 1343px;
- }
- .carrusel img{
-    width: 1343px;
-    height: 543px;   
+#grecibo:hover{
+    background-color: #e79600;
+    color:black;
+    text-decoration:none;
 }
 
 /*Columnas*/
@@ -557,7 +529,7 @@ h2{
   float: right; }
 .u-pull-left {
   float: left; }
-}
+
 .row {
     display: flex;
     margin: 0px;

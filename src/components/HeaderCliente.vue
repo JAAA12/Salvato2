@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-light nav-pills" style="background-color:  rgb(204, 112, 37)">
+  <nav id="barraHeader" class="navbar navbar-light nav-pills" style="background-color:  rgb(204, 112, 37)">
     <div class="container">
         <img src="../assets/Logosalvato.png" class="logosalvato">
       <div class="enlaces">
@@ -82,6 +82,9 @@ export default {
 
 
 <style>
+#barraHeader{
+  margin:0px;
+}
 .navbar {
   position: relative;
   display: -ms-flexbox;
@@ -93,11 +96,14 @@ export default {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: .5rem 1rem;
+  margin:0px;
 }
 .container{
-  margin-bottom:10px;
-  margin-top:10px;
-  width: 1343px;
+  margin-bottom:0px;
+  margin-top:0px;
+  margin:0px;
+  padding: 0px;
+  width: 100%;
 }
 .nav-link{
   color:white;
@@ -122,13 +128,13 @@ export default {
   height:30px;
 }
 /* Diseño para celulares */
-#columna1, #columna2, #columna3 {
+/*#columna1, #columna2, #columna3 {
 	float:none;
 	width:100%;
 }
 
 /* Diseño para tabletas */ 
-@media screen and (min-width: 800px) {
+/*@media screen and (min-width: 800px) {
 	#columna1, #columna2 {
 		float:left;
 		width:50%;
@@ -136,10 +142,10 @@ export default {
 }
 
 /* Diseño para PC */ 
-@media screen and (min-width: 1025px) {
+/*@media screen and (min-width: 1025px) {
 	#columna1, #columna2, #columna3 {
 	float:left;
 	width:33%;
 }
-}
+}*/
 </style>

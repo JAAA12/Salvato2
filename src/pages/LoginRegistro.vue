@@ -292,6 +292,8 @@
   }
   
   #formContent {
+    margin-top: 50px;
+    margin-bottom: 50px;
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background: #fff;

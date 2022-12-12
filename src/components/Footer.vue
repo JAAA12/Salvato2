@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer id="footer" class="footer">
-      <div class="container">
+      <div class="container3">
           <div class="colu">
                   <div class="four columns">
                           <nav id="principal" class="menu">
@@ -62,7 +62,7 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );/*define el nombre de las líneas y las funciones de tamaño de línea de grid columns.*/
   grid-gap: 1rem;/*nos permite determinar los espaciados entre los elementos.*/
 }
-.footer .container {
+.footer .container3 {
   padding: 2px;
 }
 

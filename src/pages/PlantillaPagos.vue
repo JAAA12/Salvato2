@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Lista de pagos</h3>
+    <h3 class="registroH6">Lista de pagos</h3>
 
     <ul class="list-group">
       <li v-for="(recibo, i) in recibo1" :key="i"  class="list-group-item">
@@ -47,5 +47,14 @@ export default {
 <style>
 #confirmar{
   margin-left: 20px;
+}
+.list-group{
+  margin-left: 100px;
+}
+.registroH6{
+  margin-top: 30px;
+  margin-left: 520px;
+  margin-bottom: 30px;
+  font-family: 'Times New Roman', Times, serif;
 }
 </style>

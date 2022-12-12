@@ -1,5 +1,5 @@
 <template>
-  <app-header class="mb-3" :key ="mostrarN"/>
+  <app-header :key ="mostrarN"/>
   <div class="container"><router-view /></div>
   <app-footer/>
 </template>

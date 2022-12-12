@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Registro</h3>
+    <h3 class="registroH3">Registro</h3>
 
     <div id="cuadro" class="card">
       <div class="card-body">
@@ -77,6 +77,14 @@ export default {
 </script>
 
 <style>
+.registroH3{
+  margin-top: 30px;
+  margin-left: 580px;
+  font-family: 'Times New Roman', Times, serif;
+}
+#cuadro{
+  margin-left: 350px;
+}
 .btn{
   margin:5px;
   background-color: #923a17;
