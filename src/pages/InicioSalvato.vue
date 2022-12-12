@@ -19,8 +19,8 @@
                 <p style="color:white; font-family:'Times New Roman', Times, serif ; font-size:20px">Tortas <br>Suaves y saludables</p>
             </div>
             <div class="iconopostre">
-                <p style="color:white; font-family:'Times New Roman', Times, serif ; font-size:20px">Postres <br>
-                Únicos y llenos de sabor </p>
+                <p style="color:white; font-family:'Times New Roman', Times, serif ; font-size:20px">Detalles <br>
+                Para repartir amor </p>
             </div>
         </div>
 
