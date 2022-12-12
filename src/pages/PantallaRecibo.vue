@@ -13,7 +13,7 @@
                                         </tr>
                                     </thead>
                                     <tbody v-for="(carro, i) in producto" :key="i" >
-                                    <td> {{producto[0].titulo}} </td>
+                                    <td> {{producto}} </td>
                                     <td> {{producto.precio}} </td>
                                     <td> {{producto.cantidad}} </td>
                                     
@@ -179,11 +179,12 @@ setup(){
       console.log(res)
       for(const id in res.data){
         producto.value.push({
-          id: res.data.id,
-          titulo: res.data.titulo
+          /* id: res.data.object, */
+          id: res.data[id].data[id].titulo,
+          titulo: res.data
          
         })
-        console.log(producto.value)
+        console.log(producto)
       }
     })
     .catch(error=> console.log(error))

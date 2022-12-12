@@ -86,6 +86,7 @@ export default {
   margin:0px;
 }
 .navbar {
+  font-family: 'Times New Roman';
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -99,6 +100,7 @@ export default {
   margin:0px;
 }
 .container{
+  font-family: 'Times New Roman';
   margin-bottom:0px;
   margin-top:0px;
   margin:0px;
