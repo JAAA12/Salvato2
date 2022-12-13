@@ -15,17 +15,17 @@
                   <nav class="sociales">
                 
                           <li>
-                              <a href="http://facebook.com" target="_blank">
+                              <a href="https://www.facebook.com/salvato.bga" target="_blank">
                                   <img src="../assets/imgface.png" width="50" height="50">
                               </a>
                           </li>
                           <li>
-                              <a href="http://instagram.com" target="_blank">
+                              <a href="https://www.instagram.com/salvato_bga/" target="_blank">
                                   <img src="../assets/imginsta.png" width="50" height="50">
                               </a>
                           </li>
                           <li>
-                              <a href="https://www.whatsapp.com/" target="_blank">
+                              <a href="https://api.whatsapp.com/message/MY3HG5ZB6U47C1?autoload=1&app_absent=0" target="_blank">
                                   <img src="../assets/imgwhatsapp.png" width="50" height="50">
                               </a>
                           </li>
