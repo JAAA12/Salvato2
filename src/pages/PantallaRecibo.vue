@@ -29,7 +29,7 @@
                                         </router-link>
                                       </li>
                             </div>
-    <h1>Detalles Del Pedido</h1>
+    <h1 class="tituloDetalles">Detalles Del Pedido</h1>
     <div class="form-group">
         <label for="formInput">Nombre</label>
         <input 
@@ -203,5 +203,10 @@ setup(){
 li{
   list-style: none;
 }
-
+#recibo{
+  margin-left: 50px;
+}
+.tituloDetalles{
+  margin-top: 40px;
+}
 </style> 

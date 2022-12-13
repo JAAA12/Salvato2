@@ -222,10 +222,10 @@ function llenarCarritoHTML(){
 
     totalPedido = totalPedido + producto.total;
 
-    const filaTotal = document.createElement('tr');
+    
     filaTotal.innerHTML = `
     <td>Total Pedido: ${totalPedido} </td>
-    `;
+    `;const filaTotal = document.createElement('tr');
     /* Esta parte deberia ir en Detalles del pedido */
     contenedorCarrito.appendChild(fila);
     limpiarHtmlTotal();
@@ -246,7 +246,12 @@ function agregarAlRecibo(){
     axios.post('https://databasejaa-default-rtdb.firebaseio.com/carro.json',articuloCarrito)
         .then(res=> console.log(res))
         .catch(error=> console.log(error))
-}
+};
+/*function cards(){
+    if(key===3){
+    const nuevaColumnaCards = document.createElement('row');   
+    }
+}*/
 
  },
  
@@ -262,15 +267,7 @@ function agregarAlRecibo(){
 #titulo2{
     margin-bottom: 40px;
 }
-.bod ul li{
-    display:flex;
-    margin:0px;
-    margin-left: 90px;
-    padding: 0px;
-}
-body {
-    margin: 0px;
-}
+
 #img-carrito{
     margin-top: 18px;
     margin-left: 900px;
@@ -280,7 +277,6 @@ body {
     height:auto;
     width: 1343px;
     font-family: georgia;
-
 }
 .encabezado{
     display: flex;
@@ -409,6 +405,15 @@ h2{
   width:1000px;
   height: 100px;
 }
+.bod ul li{
+    display:flex;
+    margin:0px;
+    margin-left: 90px;
+    padding: 0px;
+}
+body {
+    margin: 0px;
+}
 .bod{
    margin-left: 1px;
    margin-right: 1px;
@@ -417,6 +422,10 @@ h2{
    /*width: 1343px;
    height: 1343px;*/
    display: flex;
+}
+.row {
+    display: flex;
+    margin: 0px;
 }
 .card img{
     width:300px;
@@ -530,10 +539,7 @@ h2{
 .u-pull-left {
   float: left; }
 
-.row {
-    display: flex;
-    margin: 0px;
-}
+
 </style>
 <!-- git init
 git add .

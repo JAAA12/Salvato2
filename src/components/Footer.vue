@@ -137,6 +137,7 @@ nav
 }
 .menu {
   padding: 0px 45px 0px 0px;
+  padding-left: 50px;
   font-size: 20px;
 }
 /* Larger than mobile */
