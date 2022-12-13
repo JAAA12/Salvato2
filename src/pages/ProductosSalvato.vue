@@ -222,11 +222,12 @@ function llenarCarritoHTML(){
 
     totalPedido = totalPedido + producto.total;
 
-    
+    const filaTotal = document.createElement('tr');
     filaTotal.innerHTML = `
     <td>Total Pedido: ${totalPedido} </td>
-    `;const filaTotal = document.createElement('tr');
-    /* Esta parte deberia ir en Detalles del pedido */
+    `;
+    
+    
     contenedorCarrito.appendChild(fila);
     limpiarHtmlTotal();
     totalCarrito.appendChild(filaTotal);
