@@ -13,7 +13,7 @@
                                         </tr>
                                     </thead>
                                     <tbody v-for="(carro, i) in producto" :key="i" >
-                                    <td> {{producto.titulo}} </td>
+                                    <td> {{producto}} </td>
                                     <td> {{producto.precio}} </td>
                                     <td> {{producto.cantidad}} </td>
                                     
@@ -29,7 +29,7 @@
                                         </router-link>
                                       </li>
                             </div>
-    <h1 class="tituloDetalles">Detalles Del Pedido</h1>
+    <h1>Detalles Del Pedido</h1>
     <div class="form-group">
         <label for="formInput">Nombre</label>
         <input 
@@ -176,20 +176,16 @@ setup(){
     
     axios.get('https://databasejaa-default-rtdb.firebaseio.com/carro.json')
     .then(res=>{
-      console.log(res, 'res')
-      for(const id in res.data){
-        
+      console.log(res)
+     /*  for(const id in res.data){
         producto.value.push({
-          /* id: res.data.object, */
-          /* id: id,
-          titulo: res.data[id].data[id] */
+         
+          id: res.data[id].data[id].titulo,
+          titulo: res.data
          
         })
-        console.log(producto.value, 'id')
-        console.log(res.data[id].data[id].titulo, 'res')
-                
-
-      }
+        console.log(producto)
+      } */
     })
     .catch(error=> console.log(error))
     
@@ -207,10 +203,5 @@ setup(){
 li{
   list-style: none;
 }
-#recibo{
-  margin-left: 50px;
-}
-.tituloDetalles{
-  margin-top: 40px;
-}
+
 </style> 
