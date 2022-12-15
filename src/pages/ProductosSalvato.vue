@@ -49,23 +49,19 @@
         <h2 id="titulo2">SALVATOS</h2>
    </div>
  <div id="lista-cursos" class="bod">
-        <ul> 
-            <li>
-                <div class="row" v-for="(productos, i) in productosVector" :key="i">
-                    <div class="four columns">
-                        <div class="card" id="salvatos">
-                            <img src="../assets/salvato_clasico.jpg" class="imagen-curso u-full-width">
+            <div class="row" v-for="(productos, i) in productosVector" :key="i">
+                <div class="four columns">
+                    <div class="card" id="salvatos">
+                        <img src="../assets/salvato_clasico.jpg" class="imagen-curso u-full-width">
                             <div class="info-card">
                                 <h4 ><b>{{productos.nombreProducto}}</b></h4>
                                 <p >{{productos.descripcion}}</p>
-                                <p  class="precio"><span >${{productos.precio}}</span></p>
-                                <a @click="carrito" ref="agregar" href="#" class="u-full-width button-primary button input agregar-carrito"  :data-id=productos.id><b>Agregar Al Carrito</b></a>
-                            </div>
-                        </div>
+                               <p  class="precio"><span >${{productos.precio}}</span></p>
+                            <a @click="carrito" ref="agregar" href="#" class="u-full-width button-primary button input agregar-carrito"  :data-id=productos.id><b>Agregar Al Carrito</b></a>
+                         </div>
                     </div>
-                </div>
-            </li>
-        </ul>   
+             </div>
+        </div>  
     </div>
 </div>
 
@@ -79,7 +75,7 @@ import axios from 'axios'
 import {ref} from 'vue'
 export default {
     data: () => ({
-      rating: 4,
+      model: null,
     }),
   setup(){
     const productosVector = ref([])
@@ -406,12 +402,6 @@ h2{
   width:1000px;
   height: 100px;
 }
-.bod ul li{
-    display:flex;
-    margin:0px;
-    margin-left: 90px;
-    padding: 0px;
-}
 body {
     margin: 0px;
 }
@@ -420,9 +410,10 @@ body {
    margin-right: 1px;
    margin-top: 20px;
    margin-bottom: 40px;
+   height: auto;
    /*width: 1343px;
    height: 1343px;*/
-   display: flex;
+   /*display: flex;*/
 }
 .row {
     display: flex;

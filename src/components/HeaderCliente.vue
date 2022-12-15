@@ -109,7 +109,7 @@ export default {
 }
 .nav-link{
   color:white;
-  font-family: Muli,HelveticaNeue,Helvetica Neue,sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 18px;
 }
 .nav-pills #navegar.active,
