@@ -48,9 +48,9 @@
         <h1 id="titulo1" class="titulo1"><b>Nuestros Productos</b></h1>
         <h2 id="titulo2">SALVATOS</h2>
    </div>
- <div id="lista-cursos" class="bod">
-            <div class="row" v-for="(productos, i) in productosVector" :key="i">
-                <div class="four columns">
+ <div id="lista-cursos" class="col-9">
+            <div class="row" id="productosVector">
+                <div class="col-4" id="salvatos" v-for="(productos, i) in productosVector" :key="i">
                     <div class="card" id="salvatos">
                         <img src="../assets/salvato_clasico.jpg" class="imagen-curso u-full-width">
                             <div class="info-card">

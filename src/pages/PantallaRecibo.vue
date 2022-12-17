@@ -1,34 +1,30 @@
 <template>
 <div id="recibo" src="js/jspdf.min.js">
 <div id="carro">
-                                    
-                                <table id="lista-carrito" class="u-full-width">
-                                    <thead>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Precio</th>
-                                            <th>Cantidad</th>
-                                            <th>total</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody v-for="(carro, i) in producto" :key="i" >
-                                    <td> {{producto}} </td>
-                                    <td> {{producto.precio}} </td>
-                                    <td> {{producto.cantidad}} </td>
-                                    
-                                    <td> <a href= "#" class="borrar-curso" data-id="${producto.id}"/>X</td>
-                                    </tbody>
-                                    
-                                </table>
-
-                                    <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
-                                    <li class="nav-item">
-                                        <router-link to="/pantallaRecibo" class="nav-link" active-class="active" id="grecibo">
-                                            Generar Recibo
-                                        </router-link>
-                                      </li>
-                            </div>
+  <table id="lista-carrito" class="u-full-width">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>total</th>
+        <th></th>
+      </tr>
+    </thead>
+  <tbody v-for="(carro, i) in producto" :key="i" >
+      <td> {{producto}} </td>
+      <td> {{producto.precio}} </td>
+      <td> {{producto.cantidad}} </td>
+      <td> <a href= "#" class="borrar-curso" data-id="${producto.id}"/>X</td>
+  </tbody>
+</table>
+  <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+    <li class="nav-item">
+  <router-link to="/pantallaRecibo" class="nav-link" active-class="active" id="grecibo">
+    Generar Recibo
+  </router-link>
+    </li>
+</div>
     <h1>Detalles Del Pedido</h1>
     <div class="form-group">
         <label for="formInput">Nombre</label>
@@ -177,15 +173,17 @@ setup(){
     axios.get('https://databasejaa-default-rtdb.firebaseio.com/carro.json')
     .then(res=>{
       console.log(res)
-     /*  for(const id in res.data){
+      for(const id in res.data){
+        console.log(res.data,"Esta es la res data")
+        console.log(id,"Esta es el id")
         producto.value.push({
          
-          id: res.data[id].data[id].titulo,
+          id: res.data[id.titulo],
           titulo: res.data
          
         })
-        console.log(producto)
-      } */
+        console.log(producto.value,"Producto a Mostrar")
+      } 
     })
     .catch(error=> console.log(error))
     
