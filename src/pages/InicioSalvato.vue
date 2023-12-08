@@ -12,7 +12,7 @@
 
         <div class="barra">
             <div class="iconopan">
-                <p style="color:white; font-family:'Times New Roman', Times, serif ; font-size:20px">Panes <br>
+                <p style="color:white; font-family:'Times New Roman', Times, serif ; font-size:20px">cambiooooPanes <br>
                 Deliciosos y frescos</p>
             </div>
             <div class="iconotorta">

@@ -8,13 +8,14 @@
         <th>Precio</th>
         <th>Cantidad</th>
         <th>total</th>
-        <th></th>
+        <th>Eliminar</th>
       </tr>
     </thead>
   <tbody v-for="(carro, i) in producto" :key="i" >
-      <td> {{producto}} </td>
-      <td> {{producto.precio}} </td>
-      <td> {{producto.cantidad}} </td>
+    <td> {{producto.titulo}} </td>
+    <td> {{producto.precio}} </td>
+    <td> {{producto.cantidad}} </td>
+    <td> {{producto.total}} </td>
       <td> <a href= "#" class="borrar-curso" data-id="${producto.id}"/>X</td>
   </tbody>
 </table>
@@ -169,7 +170,19 @@ setup(){
       })
     }  
     
-    
+      const carro = ref("")
+      const indexP = route.params.indexP;
+     /*  return store.getters.getPersona(index);
+    }) */
+    axios.get('https://databasejaa-default-rtdb.firebaseio.com/carro/'+indexP+'.json')
+    .then(res=>{
+      console.log(res,"CAROOOO")
+      carro.value = res.data
+      console.log(carro.value,"Valor individual carro")
+    })
+
+    .catch(error=>console.log(error))
+
     axios.get('https://databasejaa-default-rtdb.firebaseio.com/carro.json')
     .then(res=>{
       console.log(res)
@@ -177,10 +190,11 @@ setup(){
         console.log(res.data,"Esta es la res data")
         console.log(id,"Esta es el id")
         producto.value.push({
-         
-          id: res.data[id.titulo],
-          titulo: res.data
-         
+          id: id,
+          titulo: res.data[id].titulo,
+          precio: res.data[id].precio,
+          cantidad: res.data[id].cantidad,
+          total: res.data[id].total
         })
         console.log(producto.value,"Producto a Mostrar")
       } 
@@ -189,7 +203,7 @@ setup(){
     
    
 
-    return{hora, fecha,entrega,pago, telefono,nombrePedido,generaRecibo, producto} 
+    return{hora, fecha,entrega,pago, telefono,nombrePedido,generaRecibo, producto, carro} 
 },
 
  
