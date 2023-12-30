@@ -1,6 +1,6 @@
 <template>
   <app-header :key ="mostrarN"/>
-  <div class="container"><router-view /></div>
+  <div class="containerPrincipal"><router-view /></div>
   <app-footer/>
 </template>
 

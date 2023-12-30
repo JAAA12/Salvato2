@@ -103,9 +103,9 @@ export default {
   font-family: 'Times New Roman';
   margin-bottom:0px;
   margin-top:0px;
-  margin:0px;
+  /*margin:0px;
   padding: 0px;
-  width: 100%;
+  width: 100%;*/
 }
 .nav-link{
   color:white;

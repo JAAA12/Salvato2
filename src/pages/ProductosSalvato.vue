@@ -36,7 +36,7 @@
             </div>
 </header>
 
-    <div class='carrusel'>
+    <!-- <div class='carrusel'>
         <div class="carrusel-img">
             <ul class="img-carrusel">
                 <li><img src="../assets/background2.jpg" alt="No cargó"></li>
@@ -47,7 +47,7 @@
         </div>
         <h1 id="titulo1" class="titulo1"><b>Nuestros Productos</b></h1>
         <h2 id="titulo2">SALVATOS</h2>
-   </div>
+   </div> -->
  <div id="lista-cursos" class="col-9">
             <div class="row" id="productosVector">
                 <div class="col-4" id="salvatos" v-for="(productos, i) in productosVector" :key="i">
@@ -386,14 +386,17 @@ a{
 }
 
 h2{
-   width: 1000px;
+   /*width: 1000px;
    height: 60px;
    margin-left: 109px;
   margin-right: 200px;
    font-size: 2.5rem;
    text-align: center;
-   font-family: 'Times New Roman', Times, serif;
+   font-family: 'Times New Roman', Times, serif;*/
+   display:flex;justify-content:center;
+   
 }
+
 .titulo1{
   font-size: 50px;
   margin-top: 80px;
@@ -417,7 +420,8 @@ body {
 }
 .row {
     display: flex;
-    margin: 0px;
+    justify-content: center;
+
 }
 .card img{
     width:300px;
